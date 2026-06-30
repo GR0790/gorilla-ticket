@@ -32,14 +32,14 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords }) => {
       <meta property="og:title" content={`${title} | 고릴라티켓`} />
       <meta property="og:description" content={description} />
       <meta property="og:site_name" content="고릴라티켓" />
-      <meta property="og:image" content={`${siteUrl}/gongryong-mascot.webp`} />
+      <meta property="og:image" content={`${siteUrl}/gorilla-mascot.png`} />
       <meta property="og:url" content={canonicalUrl} />
 
       {/* 5. 트위터 카드 (X 공유 미리보기) */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={`${title} | 고릴라티켓`} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={`${siteUrl}/gongryong-mascot.webp`} />
+      <meta name="twitter:image" content={`${siteUrl}/gorilla-mascot.png`} />
 
       {/* 6. 구조화 데이터 (JSON-LD): 구글에게 "우리는 브랜드다"라고 직접 말하기 */}
       <script type="application/ld+json">
@@ -48,7 +48,7 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords }) => {
           "@type": "Organization",
           "name": "고릴라티켓",
           "url": siteUrl,
-          "logo": `${siteUrl}/gongryong-mascot.webp`,
+          "logo": `${siteUrl}/gorilla-mascot.png`,
           "description": "업계 1위 소액결제현금화 서비스, 3분 입금 고릴라티켓",
           "contactPoint": {
             "@type": "ContactPoint",
