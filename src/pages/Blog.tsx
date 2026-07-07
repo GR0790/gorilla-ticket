@@ -68,7 +68,7 @@ const Blog: React.FC = () => {
       <section className="bg-gradient-to-br from-purple-50 to-purple-100 py-12 md:py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            구름페이 정보 블로그
+            고릴라티켓 정보 블로그
           </h1>
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
             현금화 서비스에 대한 유용한 정보와 안전한 거래 가이드,

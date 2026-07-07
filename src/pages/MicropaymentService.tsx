@@ -9,11 +9,11 @@ const faqData = [
   },
   {
     question: "소액결제 현금화 방법은 어떻게 되나요?",
-    answer: "①상담 신청 → ②소액결제 한도 확인 → ③간단한 본인인증 → ④3분 이내 즉시입금 순으로 진행됩니다. 구름페이은 평균 2분 47초 만에 입금 완료됩니다."
+    answer: "①상담 신청 → ②소액결제 한도 확인 → ③간단한 본인인증 → ④3분 이내 즉시입금 순으로 진행됩니다. 고릴라티켓은 평균 2분 47초 만에 입금 완료됩니다."
   },
   {
     question: "소액결제 현금화 수수료(지급률)는 얼마인가요?",
-    answer: "구름페이 소액결제 현금화 지급률은 70~80%입니다. 예를 들어 소액결제 한도 10만원을 현금화하면 7만~8만원을 받으실 수 있습니다. 업계 최저 수수료를 보장합니다."
+    answer: "고릴라티켓 소액결제 현금화 지급률은 70~80%입니다. 예를 들어 소액결제 한도 10만원을 현금화하면 7만~8만원을 받으실 수 있습니다. 업계 최저 수수료를 보장합니다."
   },
   {
     question: "모든 통신사(SKT, KT, LGU+)에서 소액결제 현금화가 가능한가요?",
@@ -21,15 +21,15 @@ const faqData = [
   },
   {
     question: "미납이나 정책 제한이 있어도 소액결제 현금화가 되나요?",
-    answer: "구름페이은 미납·정책 제한 상황에서도 99.9% 승인을 보장합니다. 타업체에서 거절당하신 분들도 꼭 상담해보세요."
+    answer: "고릴라티켓은 미납·정책 제한 상황에서도 99.9% 승인을 보장합니다. 타업체에서 거절당하신 분들도 꼭 상담해보세요."
   },
   {
     question: "소액결제 한도는 어떻게 확인하나요?",
-    answer: "소액결제 한도는 ①통신사 앱(T월드, KT닷컴, U+앱) ②*#요금조회 ③통신사 고객센터(SKT 114, KT 100, LGU+ 101)를 통해 확인 가능합니다. 구름페이 상담 시 한도 확인도 함께 도와드립니다."
+    answer: "소액결제 한도는 ①통신사 앱(T월드, KT닷컴, U+앱) ②*#요금조회 ③통신사 고객센터(SKT 114, KT 100, LGU+ 101)를 통해 확인 가능합니다. 고릴라티켓 상담 시 한도 확인도 함께 도와드립니다."
   },
   {
     question: "소액결제 현금화는 안전한가요? 합법인가요?",
-    answer: "정식 등록 업체를 통한 소액결제 현금화는 합법 서비스입니다. 구름페이은 정식 사업자 등록 업체로 모든 거래는 안전하게 처리되며, 개인정보는 철저히 보호됩니다."
+    answer: "정식 등록 업체를 통한 소액결제 현금화는 합법 서비스입니다. 고릴라티켓은 정식 사업자 등록 업체로 모든 거래는 안전하게 처리되며, 개인정보는 철저히 보호됩니다."
   },
   {
     question: "소액결제 현금화 후 신용점수에 영향이 있나요?",
@@ -42,7 +42,7 @@ const MicropaymentService: React.FC = () => {
     <>
       <SEO 
         title="소액결제 현금화 - 3분 즉시입금, 업계 최저 수수료"
-        description="소액결제 현금화 전문 구름페이. SKT·KT·LGU+ 소액결제 현금화 방법 안내, 지급률 70~80%, 미납·정책 99.9% 승인, 3분 즉시입금. 소액결제현금화 디시 커뮤니티 1위 추천 업체."
+        description="소액결제 현금화 전문 고릴라티켓. SKT·KT·LGU+ 소액결제 현금화 방법 안내, 지급률 70~80%, 미납·정책 99.9% 승인, 3분 즉시입금. 소액결제현금화 디시 커뮤니티 1위 추천 업체."
         keywords="소액결제 현금화,소액결제현금화,소액결제 현금화 방법,소액결제현금화 디시,소액결제 현금화 후기,소액결제 현금화 수수료,소액결제 현금화 업체,소액결제 현금화 추천,소액결제 한도,소액결제 한도 확인,SKT 소액결제 현금화,KT 소액결제 현금화,LGU 소액결제 현금화,휴대폰 소액결제 현금화,핸드폰 소액결제 현금화,미납 소액결제 현금화,소액결제 즉시입금,소액결제 현금화 안전"
         faqItems={faqData}
         pageType="service"
@@ -93,7 +93,7 @@ const MicropaymentService: React.FC = () => {
                     <strong>소액결제 현금화</strong>란 SKT, KT, LGU+ 통신사에서 제공하는 <strong>휴대폰 소액결제 한도</strong>를 활용해 필요한 현금을 즉시 마련하는 서비스입니다. 복잡한 서류나 심사 없이 <strong>휴대폰 하나만으로 3분 안에 현금화</strong>가 가능합니다.
                   </p>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    디시인사이드, 네이버 카페, 각종 커뮤니티에서 <strong>소액결제현금화 업체 추천</strong>으로 구름페이이 꾸준히 언급되는 이유는 업계 최고 수준의 <strong>지급률(70~80%)</strong>과 빠른 입금 속도 때문입니다.
+                    디시인사이드, 네이버 카페, 각종 커뮤니티에서 <strong>소액결제현금화 업체 추천</strong>으로 고릴라티켓이 꾸준히 언급되는 이유는 업계 최고 수준의 <strong>지급률(70~80%)</strong>과 빠른 입금 속도 때문입니다.
                   </p>
                   <ul className="space-y-2 text-gray-700">
                     <li className="flex items-center"><span className="w-2 h-2 bg-sky-600 rounded-full mr-3 flex-shrink-0" />모든 통신사 지원: SKT, KT, LGU+ 상관없이 이용 가능</li>
@@ -176,7 +176,7 @@ const MicropaymentService: React.FC = () => {
               </div>
             </div>
             <div className="mt-6 bg-yellow-50 border border-yellow-200 rounded-xl p-4 text-center">
-              <p className="text-yellow-800 text-sm">💡 <strong>소액결제 한도 확인 방법:</strong> 통신사 앱 → 요금/결제 → 소액결제 항목에서 잔여 한도 확인 가능 | 상담 시 구름페이이 한도 확인을 도와드립니다.</p>
+              <p className="text-yellow-800 text-sm">💡 <strong>소액결제 한도 확인 방법:</strong> 통신사 앱 → 요금/결제 → 소액결제 항목에서 잔여 한도 확인 가능 | 상담 시 고릴라티켓이 한도 확인을 도와드립니다.</p>
             </div>
           </section>
 
@@ -186,7 +186,7 @@ const MicropaymentService: React.FC = () => {
               소액결제 현금화 수수료 & 지급률 안내
             </h2>
             <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8">
-              <p className="text-gray-600 text-center mb-8">구름페이은 업계 최저 수수료로 투명하게 운영합니다. 소액결제 현금화 수수료는 20~30%이며, 지급률은 70~80%입니다.</p>
+              <p className="text-gray-600 text-center mb-8">고릴라티켓은 업계 최저 수수료로 투명하게 운영합니다. 소액결제 현금화 수수료는 20~30%이며, 지급률은 70~80%입니다.</p>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
@@ -219,16 +219,16 @@ const MicropaymentService: React.FC = () => {
             </div>
           </section>
 
-          {/* 구름페이 핵심 장점 */}
+          {/* 고릴라티켓 핵심 장점 */}
           <section className="mb-16">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-              구름페이 소액결제 현금화 핵심 장점
+              고릴라티켓 소액결제 현금화 핵심 장점
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { icon: "⚡", title: "3분 즉시입금", desc: "소액결제 현금화 신청부터 입금까지 평균 2분 47초! 긴급 비상금도 신속하게 해결합니다." },
                 { icon: "💰", title: "지급률 70~80%", desc: "소액결제 현금화 수수료 20~30%, 업계 최저 수준의 투명한 지급률을 보장합니다." },
-                { icon: "🔥", title: "미납 99.9% 승인", desc: "미납·정책 제한으로 거절당하셨나요? 구름페이은 99.9% 승인을 자부합니다." },
+                { icon: "🔥", title: "미납 99.9% 승인", desc: "미납·정책 제한으로 거절당하셨나요? 고릴라티켓은 99.9% 승인을 자부합니다." },
                 { icon: "🛡️", title: "24시간 안전 상담", desc: "정식 사업자 등록 업체. 소액결제 현금화 안전 거래를 24시간 365일 보장합니다." },
               ].map((item) => (
                 <div key={item.title} className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
@@ -247,19 +247,19 @@ const MicropaymentService: React.FC = () => {
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
               소액결제 현금화 후기 — 실제 이용자 리뷰
             </h2>
-            <p className="text-center text-gray-600 mb-8">디시인사이드, 네이버 카페, 각종 커뮤니티에서 검증된 구름페이 소액결제 현금화 후기입니다.</p>
+            <p className="text-center text-gray-600 mb-8">디시인사이드, 네이버 카페, 각종 커뮤니티에서 검증된 고릴라티켓 소액결제 현금화 후기입니다.</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
                   name: "김*수 (SKT, 30만원)",
                   tag: "소액결제 현금화 후기",
-                  review: "소액결제현금화 디시 보고 구름페이 찾았는데 진짜 3분도 안됐어요. 수수료도 다른 데보다 저렴하고 상담도 친절해서 너무 좋았습니다. 강추!",
+                  review: "소액결제현금화 디시 보고 고릴라티켓 찾았는데 진짜 3분도 안됐어요. 수수료도 다른 데보다 저렴하고 상담도 친절해서 너무 좋았습니다. 강추!",
                   stars: 5
                 },
                 {
                   name: "이*진 (KT, 50만원)",
                   tag: "소액결제 현금화 후기",
-                  review: "미납 있어서 다른 업체에서 거절당했는데 구름페이은 바로 됐어요. 소액결제 한도 확인부터 입금까지 정말 빠르고 안전하게 처리해줬습니다.",
+                  review: "미납 있어서 다른 업체에서 거절당했는데 고릴라티켓은 바로 됐어요. 소액결제 한도 확인부터 입금까지 정말 빠르고 안전하게 처리해줬습니다.",
                   stars: 5
                 },
                 {
@@ -322,7 +322,7 @@ const MicropaymentService: React.FC = () => {
                 지금 바로 소액결제 현금화 상담받아보세요!
               </h2>
               <p className="text-lg mb-6 opacity-90">
-                급한 비상금이 필요할 때, 구름페이 소액결제 현금화로 3분 안에 해결하세요.<br />
+                급한 비상금이 필요할 때, 고릴라티켓 소액결제 현금화로 3분 안에 해결하세요.<br />
                 24시간 365일 상담 가능, 미납·정책 99.9% 승인 보장.
               </p>
               <a

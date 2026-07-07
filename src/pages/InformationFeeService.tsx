@@ -8,7 +8,7 @@ const InformationFeeService: React.FC = () => {
       {/* [추가됨] 정보이용료 페이지 전용 SEO 설정 */}
       <SEO 
         title="정보이용료 현금화 콘텐츠이용료 현금화 수수료 싼곳"
-        description="정보이용료 현금화, 콘텐츠이용료 현금화 전문! 구글 정보이용료 미납 한도 100% 현금화 가능. SKT KT LGU+ 수수료 최저가, 3분 즉시 입금 구름페이입니다."
+        description="정보이용료 현금화, 콘텐츠이용료 현금화 전문! 구글 정보이용료 미납 한도 100% 현금화 가능. SKT KT LGU+ 수수료 최저가, 3분 즉시 입금 고릴라티켓입니다."
         keywords="정보이용료현금화, 콘텐츠이용료현금화, 구글정보이용료, 정보이용료 현금화 방법, 정보이용료 매입"
       />
 
@@ -18,7 +18,7 @@ const InformationFeeService: React.FC = () => {
           <div className="container mx-auto px-4 text-center">
             {/* H1 태그에 핵심 키워드 유지 */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              정보이용료 현금화: 통신사 정보이용료 한도로 즉시 현금화 | 구름페이
+              정보이용료 현금화: 통신사 정보이용료 한도로 즉시 현금화 | 고릴라티켓
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
               SKT, KT, LGU+ 통신사 정보이용료 한도를 100% 활용! 복잡한 절차 없이
@@ -59,7 +59,7 @@ const InformationFeeService: React.FC = () => {
                       to="/"
                       className="text-blue-600 hover:text-blue-700 font-semibold"
                     >
-                      구름페이
+                      고릴라티켓
                     </Link>
                     의 정보이용료 현금화 서비스입니다. 통신사별로 월 최대
                     100만원까지 이용 가능하며, 빠르고 안전하게 현금화 해드립니다.
@@ -144,7 +144,7 @@ const InformationFeeService: React.FC = () => {
           {/* Service Features */}
           <section className="mb-16">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-              🚀 구름페이 정보이용료 현금화 핵심 장점
+              🚀 고릴라티켓 정보이용료 현금화 핵심 장점
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">

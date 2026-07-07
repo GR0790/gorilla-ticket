@@ -11,7 +11,7 @@ const Terms: React.FC = () => {
             이용약관
           </h1>
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            구름페이 서비스 이용에 관한 제반 사항과
+            고릴라티켓 서비스 이용에 관한 제반 사항과
             <br />
             기타 필요한 사항을 규정합니다.
           </p>
@@ -124,7 +124,7 @@ const Terms: React.FC = () => {
               제1조 (목적)
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              이 약관은 구름페이(이하 "회사")가 제공하는 소액결제, 정보이용료,
+              이 약관은 고릴라티켓(이하 "회사")가 제공하는 소액결제, 정보이용료,
               신용카드, 상품권 현금화 서비스(이하 "서비스")의 이용조건 및 절차,
               회사와 이용자간의 권리, 의무, 책임사항과 기타 필요한 사항을
               규정함을 목적으로 합니다.
@@ -143,7 +143,7 @@ const Terms: React.FC = () => {
               <div className="bg-gray-50 rounded-lg p-4">
                 <h3 className="font-bold text-gray-800 mb-2">1. "회사"</h3>
                 <p className="text-gray-700">
-                  현금화 서비스를 제공하는 구름페이를 의미합니다.
+                  현금화 서비스를 제공하는 고릴라티켓을 의미합니다.
                 </p>
               </div>
               <div className="bg-gray-50 rounded-lg p-4">
@@ -600,7 +600,7 @@ const Terms: React.FC = () => {
                 <h3 className="font-bold text-blue-800 mb-2">② 연락처</h3>
                 <div className="text-blue-700 space-y-1">
                   <p>
-                    <strong>상호:</strong> 구름페이
+                    <strong>상호:</strong> 고릴라티켓
                   </p>
                   <p>
                     <strong>주소:</strong> 서울특별시 강남구 테헤란로 123, 4층
@@ -645,7 +645,7 @@ const Terms: React.FC = () => {
             <p className="text-lg md:text-xl mb-8 opacity-90">
               이용약관에 대한 궁금한 점이나 서비스 이용 관련 문의는
               <br />
-              언제든지 구름페이 고객센터로 연락해주세요.
+              언제든지 고릴라티켓 고객센터로 연락해주세요.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

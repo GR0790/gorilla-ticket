@@ -8,7 +8,7 @@ const GiftCardService: React.FC = () => {
       {/* [추가됨] 상품권 페이지 전용 SEO 설정 */}
       <SEO 
         title="상품권 현금화 문화상품권 해피머니 85% 보장 수수료 싼곳"
-        description="상품권 현금화 업계 최고가 매입! 문화상품권, 해피머니, 신세계상품권, 도서문화상품권 현금화. 24시간 5분 즉시 입금, 수수료 싼곳 구름페이입니다."
+        description="상품권 현금화 업계 최고가 매입! 문화상품권, 해피머니, 신세계상품권, 도서문화상품권 현금화. 24시간 5분 즉시 입금, 수수료 싼곳 고릴라티켓입니다."
         keywords="상품권현금화, 문화상품권현금화, 해피머니현금화, 신세계상품권현금화, 상품권매입, 구글기프트카드현금화"
       />
 
@@ -17,7 +17,7 @@ const GiftCardService: React.FC = () => {
         <section className="bg-gradient-to-br from-orange-50 to-orange-100 py-12 md:py-20">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              상품권 현금화: 각종 상품권을 현금으로 바꾸세요 | 구름페이
+              상품권 현금화: 각종 상품권을 현금으로 바꾸세요 | 고릴라티켓
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
               문화상품권, 해피머니, 도서상품권, 신세계상품권 등 보유하신 모든
@@ -58,7 +58,7 @@ const GiftCardService: React.FC = () => {
                       to="/"
                       className="text-orange-600 hover:text-orange-700 font-semibold"
                     >
-                      구름페이
+                      고릴라티켓
                     </Link>
                     에서는 다양한 종류의 상품권을 높은 지급률로 현금화해드리며,
                     안전하고 신속한 거래를 보장합니다.
@@ -144,7 +144,7 @@ const GiftCardService: React.FC = () => {
           {/* Service Features */}
           <section className="mb-16">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-              🚀 구름페이 상품권 현금화 핵심 장점
+              🚀 고릴라티켓 상품권 현금화 핵심 장점
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
@@ -299,7 +299,7 @@ const GiftCardService: React.FC = () => {
                     • 24시간 거래 가능한가요?
                   </h4>
                   <p className="text-gray-700">
-                    네, 구름페이는 365일 24시간 운영되므로 언제든지 상품권 현금화 상담 및 거래가 가능합니다.
+                    네, 고릴라티켓은 365일 24시간 운영되므로 언제든지 상품권 현금화 상담 및 거래가 가능합니다.
                   </p>
                 </div>
               </div>

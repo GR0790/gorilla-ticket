@@ -8,7 +8,7 @@ const CreditCardService: React.FC = () => {
       {/* [추가됨] 신용카드 페이지 전용 SEO 설정 */}
       <SEO 
         title="신용카드 현금화 카드깡 아님 수수료 싼곳 88% 보장"
-        description="신용카드 현금화, 카드깡 절대 아님! 합법적인 결제 한도 현금화 서비스. 수수료 싼곳, 지급률 88% 보장. 삼성/신한/현대 등 전 카드사 3분 즉시 입금 구름페이."
+        description="신용카드 현금화, 카드깡 절대 아님! 합법적인 결제 한도 현금화 서비스. 수수료 싼곳, 지급률 88% 보장. 삼성/신한/현대 등 전 카드사 3분 즉시 입금 고릴라티켓."
         keywords="신용카드현금화, 카드깡아님, 카드한도현금화, 신용카드현금화수수료, 카드결제현금화, 비상금대출"
       />
 
@@ -17,7 +17,7 @@ const CreditCardService: React.FC = () => {
         <section className="bg-gradient-to-br from-purple-50 to-purple-100 py-12 md:py-20">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              신용카드 현금화: 신용카드 한도로 급전 마련 | 구름페이
+              신용카드 현금화: 신용카드 한도로 급전 마련 | 고릴라티켓
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
               신용카드 결제 한도를 활용한 안전하고 빠른 현금화 서비스! 복잡한 절차
@@ -59,7 +59,7 @@ const CreditCardService: React.FC = () => {
                       to="/"
                       className="text-purple-600 hover:text-purple-700 font-semibold"
                     >
-                      구름페이
+                      고릴라티켓
                     </Link>
                     에서는 모든 카드사를 지원하며,{" "}
                     <strong className="text-purple-600">
@@ -147,7 +147,7 @@ const CreditCardService: React.FC = () => {
           {/* Service Features */}
           <section className="mb-16">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-              🚀 구름페이 신용카드 현금화 핵심 장점
+              🚀 고릴라티켓 신용카드 현금화 핵심 장점
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">

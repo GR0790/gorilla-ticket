@@ -75,7 +75,7 @@ const HowToUse: React.FC = () => {
             "SKT: 114번 또는 T멤버십 앱에서 확인",
             "KT: 100번 고객센터에서 확인",
             "LGU+: 1544-0010에서 확인",
-            "구름페이 상담을 통한 실시간 확인",
+            "고릴라티켓 상담을 통한 실시간 확인",
           ],
         },
         {
@@ -262,7 +262,7 @@ const HowToUse: React.FC = () => {
       <section className="bg-gradient-to-br from-sky-50 to-sky-100 py-12 md:py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            구름페이 이용 방법 가이드 📚
+            고릴라티켓 이용 방법 가이드 📚
           </h1>
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
             처음 이용하시는 분들도 쉽게 따라할 수 있도록 단계별로 상세하게
@@ -467,7 +467,7 @@ const HowToUse: React.FC = () => {
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-red-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                    구름페이 공식 채널로 신고
+                    고릴라티켓 공식 채널로 신고
                   </li>
                 </ul>
               </div>

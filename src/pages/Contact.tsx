@@ -8,7 +8,7 @@ const Contact: React.FC = () => {
       <section className="bg-gradient-to-br from-yellow-50 to-yellow-100 py-12 md:py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            구름페이 1:1 상담센터
+            고릴라티켓 1:1 상담센터
           </h1>
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
             소액결제, 정보이용료, 신용카드, 상품권, 콘텐츠이용료 현금화 등 모든
@@ -79,7 +79,7 @@ const Contact: React.FC = () => {
         {/* 상담 시간 및 추가 정보 */}
         <div className="mt-16 bg-white rounded-2xl shadow-lg p-6 md:p-8">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-            구름페이 상담 안내
+            고릴라티켓 상담 안내
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -153,7 +153,7 @@ const Contact: React.FC = () => {
             </h2>
             <p className="text-lg md:text-xl mb-8 opacity-90">
               소액결제, 정보이용료, 신용카드, 상품권 현금화를 전문으로 하는
-              구름페이.
+              고릴라티켓.
               <br />
               1:1 상담으로 안전하고 신속한 서비스를 받아보세요!
             </p>

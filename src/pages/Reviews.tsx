@@ -10,7 +10,7 @@ const Reviews: React.FC = () => {
       service: "소액결제 현금화",
       rating: 5,
       content:
-        "정말 급했는데 3분도 안되서 입금됐어요! 상담도 친절하시고 소액결제 현금화 최고입니다. 구름페이 덕분에 잘 해결했어요. 다음에도 꼭 이용할게요!",
+        "정말 급했는데 3분도 안되서 입금됐어요! 상담도 친절하시고 소액결제 현금화 최고입니다. 고릴라티켓 덕분에 잘 해결했어요. 다음에도 꼭 이용할게요!",
       amount: "50만원",
     },
     {
@@ -19,7 +19,7 @@ const Reviews: React.FC = () => {
       service: "정보이용료 현금화",
       rating: 5,
       content:
-        "타업체보다 정보이용료 현금화 수수료도 저렴하고 입금도 빨라서 좋았어요. 다음에도 이용할게요! 안전한 구름페이 찾아서 다행이에요.",
+        "타업체보다 정보이용료 현금화 수수료도 저렴하고 입금도 빨라서 좋았어요. 다음에도 이용할게요! 안전한 고릴라티켓 찾아서 다행이에요.",
       amount: "80만원",
     },
     {
@@ -28,7 +28,7 @@ const Reviews: React.FC = () => {
       service: "신용카드 현금화",
       rating: 4,
       content:
-        "신용카드 현금화 절차가 복잡할 줄 알았는데 구름페이는 생각보다 간편하고 안전하게 처리해주셔서 감사합니다. 믿고 맡길 수 있겠어요.",
+        "신용카드 현금화 절차가 복잡할 줄 알았는데 고릴라티켓은 생각보다 간편하고 안전하게 처리해주셔서 감사합니다. 믿고 맡길 수 있겠어요.",
       amount: "100만원",
     },
     {
@@ -46,7 +46,7 @@ const Reviews: React.FC = () => {
       service: "소액결제 현금화",
       rating: 5,
       content:
-        "다른 업체에서 사기 당할 뻔했는데 구름페이는 정말 믿을 수 있었어요. 투명한 수수료와 빠른 처리속도에 감동했습니다.",
+        "다른 업체에서 사기 당할 뻔했는데 고릴라티켓은 정말 믿을 수 있었어요. 투명한 수수료와 빠른 처리속도에 감동했습니다.",
       amount: "70만원",
     },
     {
@@ -64,7 +64,7 @@ const Reviews: React.FC = () => {
       service: "신용카드 현금화",
       rating: 5,
       content:
-        "급하게 병원비가 필요했는데 구름페이 덕분에 해결했어요. 밤늦은 시간에도 친절하게 상담받을 수 있어서 정말 감사했습니다.",
+        "급하게 병원비가 필요했는데 고릴라티켓 덕분에 해결했어요. 밤늦은 시간에도 친절하게 상담받을 수 있어서 정말 감사했습니다.",
       amount: "120만원",
     },
     {
@@ -104,15 +104,15 @@ const Reviews: React.FC = () => {
     <>
       <SEO
         title="고객 후기"
-        description="구름페이 실제 고객 후기 1,247건. 소액결제현금화, 정보이용료현금화, 신용카드현금화, 상품권현금화 서비스 평균 평점 4.8점. 3분 입금, 24시간 상담 만족 후기를 확인하세요."
-        keywords="구름페이 후기, 소액결제현금화 후기, 정보이용료현금화 후기, 신용카드현금화 후기, 상품권현금화 후기"
+        description="고릴라티켓 실제 고객 후기 1,247건. 소액결제현금화, 정보이용료현금화, 신용카드현금화, 상품권현금화 서비스 평균 평점 4.8점. 3분 입금, 24시간 상담 만족 후기를 확인하세요."
+        keywords="고릴라티켓 후기, 소액결제현금화 후기, 정보이용료현금화 후기, 신용카드현금화 후기, 상품권현금화 후기"
       />
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           "@id": "https://xn--299a64rxvbk71bjne.com/#organization",
-          name: "구름페이",
+          name: "고릴라티켓",
           url: "https://xn--299a64rxvbk71bjne.com",
           aggregateRating: {
             "@type": "AggregateRating",
@@ -139,7 +139,7 @@ const Reviews: React.FC = () => {
         <section className="bg-gradient-to-br from-sky-50 to-sky-100 py-12 md:py-20">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              구름페이 고객 후기
+              고릴라티켓 고객 후기
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
               실제 고객님들의 생생한 경험담을 확인해보세요.
@@ -241,7 +241,7 @@ const Reviews: React.FC = () => {
           {/* 후기 작성 유도 */}
           <div className="bg-gradient-to-r from-sky-600 to-sky-700 rounded-2xl p-8 md:p-12 text-white text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              🦕 구름페이 서비스는 어떠셨나요?
+              🦕 고릴라티켓 서비스는 어떠셨나요?
             </h2>
             <p className="text-lg md:text-xl mb-8 opacity-90">
               소중한 후기를 남겨주시면 다른 고객님들께 큰 도움이 됩니다.

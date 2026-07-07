@@ -57,7 +57,7 @@ const BlogPost: React.FC = () => {
   }
 
   const postDescription = post.fields.summary ||
-    `구름페이 블로그 - ${post.fields.title}. 소액결제현금화, 정보이용료현금화 관련 정보를 제공합니다.`;
+    `고릴라티켓 블로그 - ${post.fields.title}. 소액결제현금화, 정보이용료현금화 관련 정보를 제공합니다.`;
 
   return (
     <>
@@ -118,7 +118,7 @@ const BlogPost: React.FC = () => {
                       더 궁금한 점이 있으신가요?
                     </h3>
                     <p className="text-gray-600 mb-6">
-                      구름페이 전문 상담원이 24시간 친절하게 상담해드립니다.
+                      고릴라티켓 전문 상담원이 24시간 친절하게 상담해드립니다.
                     </p>
                     <a
                       href="https://grpay.channel.io/home"

@@ -8,7 +8,7 @@ const Safety: React.FC = () => {
       <section className="bg-gradient-to-br from-blue-50 to-blue-100 py-12 md:py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            구름페이 안전 거래 시스템
+            고릴라티켓 안전 거래 시스템
           </h1>
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
             고객님의 안전한 거래를 위해 최고 수준의 보안 시스템과
@@ -63,7 +63,7 @@ const Safety: React.FC = () => {
         {/* 보안 시스템 */}
         <div className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-            🔐 구름페이 보안 시스템
+            🔐 고릴라티켓 보안 시스템
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -342,12 +342,12 @@ const Safety: React.FC = () => {
         {/* 문의 및 신고 */}
         <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 md:p-12 text-white text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            🦕 안전한 거래, 구름페이와 함께하세요!
+            🦕 안전한 거래, 고릴라티켓과 함께하세요!
           </h2>
           <p className="text-lg md:text-xl mb-8 opacity-90">
             추가 문의사항이나 의심스러운 업체 신고는
             <br />
-            언제든지 구름페이 고객센터로 연락해주세요.
+            언제든지 고릴라티켓 고객센터로 연락해주세요.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

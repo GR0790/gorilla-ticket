@@ -11,7 +11,7 @@ const Privacy: React.FC = () => {
             개인정보처리방침
           </h1>
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            구름페이는 고객님의 개인정보를 소중히 여기며,
+            고릴라티켓은 고객님의 개인정보를 소중히 여기며,
             <br />
             개인정보보호법을 준수하여 안전하게 처리하고 있습니다.
           </p>
@@ -96,7 +96,7 @@ const Privacy: React.FC = () => {
                   <span className="w-24 text-gray-600 font-semibold">
                     상호명:
                   </span>
-                  <span className="text-gray-800">구름페이</span>
+                  <span className="text-gray-800">고릴라티켓</span>
                 </div>
                 <div className="flex">
                   <span className="w-24 text-gray-600 font-semibold">
@@ -145,7 +145,7 @@ const Privacy: React.FC = () => {
               1. 개인정보의 처리목적
             </h2>
             <p className="text-gray-700 mb-6">
-              구름페이는 다음의 목적을 위하여 개인정보를 처리하고 있으며, 다음의
+              고릴라티켓은 다음의 목적을 위하여 개인정보를 처리하고 있으며, 다음의
               목적 이외의 용도로는 이용하지 않습니다.
             </p>
 
@@ -294,7 +294,7 @@ const Privacy: React.FC = () => {
                 ❌ 원칙: 제3자 제공 금지
               </h3>
               <p className="text-red-700">
-                구름페이는 정보주체의 개인정보를{" "}
+                고릴라티켓은 정보주체의 개인정보를{" "}
                 <strong>제3자에게 제공하지 않습니다.</strong>
               </p>
             </div>
@@ -339,7 +339,7 @@ const Privacy: React.FC = () => {
                 현재 상황
               </h3>
               <p className="text-gray-700 mb-4">
-                구름페이는 현재 개인정보 처리업무를 외부에 위탁하고 있지
+                고릴라티켓은 현재 개인정보 처리업무를 외부에 위탁하고 있지
                 않습니다.
               </p>
               <p className="text-gray-700">
@@ -638,7 +638,7 @@ const Privacy: React.FC = () => {
             <p className="text-lg md:text-xl mb-8 opacity-90">
               개인정보 처리에 대한 궁금한 점이나 권리 행사를 원하시면
               <br />
-              언제든지 구름페이 개인정보보호책임자에게 연락해주세요.
+              언제든지 고릴라티켓 개인정보보호책임자에게 연락해주세요.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
