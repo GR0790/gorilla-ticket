@@ -67,6 +67,7 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, faqItems, pageT
       <meta name="description" content={description} />
       <meta name="keywords" content={finalKeywords} />
       <link rel="canonical" href={canonicalUrl} />
+      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="ko_KR" />
@@ -74,12 +75,16 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, faqItems, pageT
       <meta property="og:description" content={description} />
       <meta property="og:site_name" content="고릴라티켓" />
       <meta property="og:image" content={`${siteUrl}/gorilla-mascot.webp`} />
+      <meta property="og:image:width" content="1000" />
+      <meta property="og:image:height" content="1000" />
+      <meta property="og:image:alt" content={fullTitle} />
       <meta property="og:url" content={canonicalUrl} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={`${siteUrl}/gorilla-mascot.webp`} />
+      <meta name="twitter:image:alt" content={fullTitle} />
 
       <script type="application/ld+json">
         {JSON.stringify(organizationSchema)}
