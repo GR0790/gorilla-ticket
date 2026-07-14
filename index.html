@@ -175,8 +175,6 @@
 
             /* 상담 버튼 → 채널톡 채팅 열기 (최초 1회 이름/전화 입력) */
       window.startConsult = function() {
-          /* Google Ads 전환: 채널톡 상담 버튼 클릭 */
-          try { if (typeof gtag === 'function') { gtag('event', 'conversion', {'send_to': 'AW-18305764899/-6hZCI6o8cwcEKOc75hE'}); } } catch (e) {}
           var savedName = localStorage.getItem('grpay_name');
           var savedPhone = localStorage.getItem('grpay_phone');
           if (savedName && savedPhone) {
@@ -202,6 +200,8 @@
           var cleanPhone = phone.replace(/-/g, '');
           localStorage.setItem('grpay_name', name);
           localStorage.setItem('grpay_phone', cleanPhone);
+          /* Google Ads 전환: 상담정보 입력 후 '상담 시작하기' 클릭 */
+          try { if (typeof gtag === 'function') { gtag('event', 'conversion', {'send_to': 'AW-18305764899/-6hZCI6o8cwcEKOc75hE'}); } } catch (e) {}
           closeModal();
           bootChannelAndShow(name, cleanPhone);
       }
