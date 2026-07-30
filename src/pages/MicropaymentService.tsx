@@ -44,9 +44,23 @@ const MicropaymentService: React.FC = () => {
         title="소액결제 현금화 - 3분 즉시입금, 업계 최저 수수료"
         description="소액결제 현금화 전문 고릴라티켓. SKT·KT·LGU+ 소액결제 현금화 방법 안내, 지급률 70~80%, 미납·정책 99.9% 승인, 3분 즉시입금. 소액결제현금화 디시 커뮤니티 1위 추천 업체."
         keywords="소액결제 현금화,소액결제현금화,소액결제 현금화 방법,소액결제현금화 디시,소액결제 현금화 후기,소액결제 현금화 수수료,소액결제 현금화 업체,소액결제 현금화 추천,소액결제 한도,소액결제 한도 확인,SKT 소액결제 현금화,KT 소액결제 현금화,LGU 소액결제 현금화,휴대폰 소액결제 현금화,핸드폰 소액결제 현금화,미납 소액결제 현금화,소액결제 즉시입금,소액결제 현금화 안전"
-        faqItems={faqData}
         pageType="service"
       />
+
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqData.map((item) => ({
+            "@type": "Question",
+            "name": item.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": item.answer
+            }
+          }))
+        })}
+      </script>
 
       <div className="min-h-screen bg-gray-50">
         {/* Hero Section */}
