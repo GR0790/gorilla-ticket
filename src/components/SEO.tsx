@@ -87,14 +87,10 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, faqItems, pageT
       <meta name="twitter:image" content={`${siteUrl}/gorilla-mascot.webp`} />
       <meta name="twitter:image:alt" content={fullTitle} />
 
-      <script type="application/ld+json">
-        {JSON.stringify(organizationSchema)}
-      </script>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
 
       {faqSchema && (
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
     </Helmet>
   );
