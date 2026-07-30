@@ -12,9 +12,10 @@ interface SEOProps {
   keywords?: string;
   faqItems?: FAQItem[];
   pageType?: 'home' | 'service' | 'blog' | 'general';
+  noindex?: boolean;
 }
 
-const SEO: React.FC<SEOProps> = ({ title, description, keywords, faqItems, pageType = 'general' }) => {
+const SEO: React.FC<SEOProps> = ({ title, description, keywords, faqItems, pageType = 'general', noindex = false }) => {
   const defaultKeywords = "소액결제현금화,소액결제 현금화,소액결제 현금화 방법,소액결제현금화 디시,소액결제 현금화 후기,소액결제 현금화 수수료,소액결제 현금화 업체,소액결제 현금화 추천,소액결제 현금화 사이트,소액결제 방법,소액결제 한도,소액결제 한도 확인,휴대폰 소액결제 현금화,핸드폰 소액결제 현금화,SKT 소액결제 현금화,KT 소액결제 현금화,LGU 소액결제 현금화,미납 소액결제 현금화,소액결제 즉시입금,소액결제 현금화 안전,고릴라티켓,정보이용료현금화,신용카드현금화,상품권현금화";
   const finalKeywords = keywords ? `${keywords}, ${defaultKeywords}` : defaultKeywords;
   const siteUrl = "https://xn--299a64rxvbk71bjne.com";
@@ -67,7 +68,7 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, faqItems, pageT
       <meta name="description" content={description} />
       <meta name="keywords" content={finalKeywords} />
       <link rel="canonical" href={canonicalUrl} />
-      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+      <meta name="robots" content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
 
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="ko_KR" />
