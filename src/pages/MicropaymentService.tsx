@@ -1,5 +1,6 @@
 import type React from "react";
 import { Link } from "react-router-dom";
+import Breadcrumb from "../components/Breadcrumb";
 import SEO from "../components/SEO";
 
 const faqData = [
@@ -66,6 +67,7 @@ const MicropaymentService: React.FC = () => {
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-sky-50 to-sky-100 py-12 md:py-20">
           <div className="container mx-auto px-4 text-center">
+            <Breadcrumb items={[{ label: "고릴라티켓", path: "/" }, { label: "소액결제 현금화" }]} />
             <div className="inline-flex items-center bg-red-100 text-red-800 px-4 py-2 rounded-full text-sm font-bold mb-4">
               🔥 소액결제현금화 디시·커뮤니티 1위 추천 업체
             </div>
