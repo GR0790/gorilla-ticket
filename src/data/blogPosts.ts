@@ -13,7 +13,7 @@ export const blogPosts: BlogPostItem[] = [
     fields: {
       id: 1,
       date: "2026-07-05",
-      title: "소액결제로 컬쳐랜드·문화상품권 구매하는 방법 완벽 가이드",
+      title: "소액결제로 컬쳐랜드·문화상품권 구매하는 방법",
       category: "결제 가이드",
       tags: ["소액결제", "컬쳐랜드", "문화상품권", "휴대폰결제"],
       image: "🎫",
@@ -76,7 +76,7 @@ export const blogPosts: BlogPostItem[] = [
     fields: {
       id: 2,
       date: "2026-07-06",
-      title: "정보이용료로 게임 아이템·재화 구매하는 방법과 한도 관리",
+      title: "정보이용료로 게임 아이템 구매하는 방법",
       category: "결제 가이드",
       tags: ["정보이용료", "게임아이템", "인앱결제", "콘텐츠이용료"],
       image: "🎮",
@@ -125,7 +125,7 @@ export const blogPosts: BlogPostItem[] = [
     fields: {
       id: 3,
       date: "2026-07-07",
-      title: "휴대폰 소액결제·정보이용료 한도 확인 및 관리 방법 총정리",
+      title: "휴대폰 소액결제·정보이용료 한도 확인 방법",
       category: "한도관리",
       tags: ["소액결제한도", "정보이용료한도", "통신사", "한도조회"],
       image: "📊",
@@ -228,7 +228,7 @@ export const blogPosts: BlogPostItem[] = [
     fields: {
       id: 5,
       date: "2026-07-09",
-      title: "휴대폰 요금 청구서 읽는 법 — 소액결제·정보이용료 확인하기",
+      title: "휴대폰 요금 청구서 읽는 법 총정리",
       category: "금융정보",
       tags: ["휴대폰요금", "청구서", "소액결제내역", "정보이용료"],
       image: "🧾",
@@ -276,7 +276,7 @@ export const blogPosts: BlogPostItem[] = [
     fields: {
       id: 6,
       date: "2026-07-09",
-      title: "휴대폰 소액결제 완전 정복 — 원리·한도·수수료·안전관리 총정리",
+      title: "휴대폰 소액결제 완전 정복 가이드",
       category: "총정리 가이드",
       tags: ["소액결제", "휴대폰결제", "소액결제한도", "결제안전", "총정리"],
       image: "📚",
