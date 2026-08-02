@@ -2,7 +2,7 @@
 export interface BlogPostItem {
   sys: { id: string };
   fields: {
-    id: number; title: string; category: string; tags: string[];
+    id: number; date: string; title: string; category: string; tags: string[];
     image: string; readTime: string; excerpt: string; summary: string; contentBody: string;
   };
 }
