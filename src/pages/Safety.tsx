@@ -7,8 +7,8 @@ const Safety: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO
-        title="안전 거래 시스템 - 100% 안전보장"
-        description="고릴라티켓 안전 거래 시스템. 정식 사업자 등록, 개인정보 보호, 100% 안전거래 보장으로 소액결제현금화를 안심하고 이용하세요."
+        title="안전 거래 시스템 안내"
+        description="고릴라티켓 안전 거래 시스템. 정식 사업자 등록, 개인정보 보호를 통해 소액결제현금화를 안심하고 이용하세요."
         keywords="소액결제현금화 안전, 안전거래 보장, 고릴라티켓 안전, 소액결제 사기 예방"
       />
       {/* Hero Section */}
@@ -19,7 +19,7 @@ const Safety: React.FC = () => {
             고릴라티켓 안전 거래 시스템
           </h1>
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            고객님의 안전한 거래를 위해 최고 수준의 보안 시스템과
+            고객님의 안전한 거래를 위해 다양한 보안 시스템과
             <br />
             투명한 거래 프로세스를 운영하고 있습니다.
           </p>
@@ -129,7 +129,7 @@ const Safety: React.FC = () => {
                     <span className="w-2 h-2 bg-blue-600 rounded-full mr-3 mt-2 flex-shrink-0" />
                     <div>
                       <strong>실시간 검증:</strong> 모든 거래는 실시간으로
-                      검증되어 안전성을 보장합니다.
+                      검증되어 안전성을 높입니다.
                     </div>
                   </li>
                   <li className="flex items-start">
