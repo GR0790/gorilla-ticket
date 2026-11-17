@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  // OS·브라우저 다크모드를 따라가지 않는다. 'media'로 바꾸면 다크모드 기기에서 어두운 화면이 되므로
+  // 반드시 클래스 기반('class')으로 두고, .dark 클래스를 붙이지 않는다.
   darkMode: ["class"],
   content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
   theme: {

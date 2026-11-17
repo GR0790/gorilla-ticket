@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  /* 화면 고정: OS·브라우저 다크모드를 따라가지 않고 항상 같은 밝은 화면으로 표시 */
   :root {
+    color-scheme: light only;
     --ink: 11 18 32;
     --azure: 37 99 235;
     --sky: 56 189 248;
@@ -11,12 +13,18 @@
   }
 
   html {
+    color-scheme: light only;
+    background-color: #f8fafc;
+    color: #0f172a;
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
     @apply bg-frost text-ink font-sans antialiased;
+    background-color: #f8fafc;
+    color: #0f172a;
     font-weight: 400;
     line-height: 1.75;
     word-break: keep-all;
