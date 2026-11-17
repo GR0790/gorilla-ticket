@@ -29,7 +29,7 @@ const organizationSchema = {
 "url": siteUrl,
 "logo": `${siteUrl}/gorilla-mascot.webp`,
 "image": `${siteUrl}/gorilla-mascot.webp`,
-"description": "소액결제현금화 전문. SKT·KT·LGU+ 모든 통신사 소액결제 현금화, 3분 즉시입금, 미납 정책 상담 가능, 24시간 상담.",
+"description": "소액결제현금화 상담 안내. SKT·KT·LGU+ 모든 통신사 소액결제 현금화, 빠른 입금 안내, 미납 정책 상담 가능, 24시간 상담 운영.",
 "telephone": "+82-10-2138-0790",
 "openingHours": "Mo-Su 00:00-24:00",
 "priceRange": "수수료 20~30%",

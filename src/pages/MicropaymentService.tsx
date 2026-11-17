@@ -10,7 +10,7 @@ const faqData = [
   },
   {
     question: "소액결제 현금화 방법은 어떻게 되나요?",
-    answer: "①상담 신청 → ②소액결제 한도 확인 → ③간단한 본인인증 → ④3분 이내 즉시입금 순으로 진행됩니다. 고릴라티켓은 평균 2분 47초 만에 입금 완료됩니다."
+    answer: "①상담 신청 → ②소액결제 한도 확인 → ③간단한 본인인증 → ④입금 순으로 진행됩니다. 입금은 상담과 결제 확인이 끝나는 대로 순차적으로 진행됩니다."
   },
   {
     question: "소액결제 현금화 수수료(지급률)는 얼마인가요?",
@@ -30,7 +30,7 @@ const faqData = [
   },
   {
     question: "소액결제 현금화는 안전한가요? 합법인가요?",
-    answer: "정식 등록 업체를 통한 소액결제 현금화는 합법 서비스입니다. 고릴라티켓은 정식 사업자 등록 업체로 모든 거래는 안전하게 처리되며, 개인정보는 철저히 보호됩니다."
+    answer: "소액결제 현금화는 상담 시 진행 절차와 수수료를 먼저 안내받은 뒤 진행하시는 것이 안전합니다. 고릴라티켓은 모든 거래는 안전하게 처리되며, 개인정보는 철저히 보호됩니다."
   },
   {
     question: "소액결제 현금화 후 신용점수에 영향이 있나요?",
@@ -42,8 +42,8 @@ const MicropaymentService: React.FC = () => {
   return (
     <>
       <SEO 
-        title="소액결제 현금화 3분 즉시입금 안내"
-        description="SKT·KT·LGU+ 소액결제 현금화 방법 안내. 지급률 70~80%, 미납·정책도 상담 가능, 3분 즉시입금 가능한 고릴라티켓입니다."
+        title="소액결제 현금화 안내"
+        description="SKT·KT·LGU+ 소액결제 현금화 방법 안내. 지급률 70~80%, 미납·정책도 상담 가능한 고릴라티켓입니다."
         keywords="소액결제 현금화,소액결제현금화,소액결제 현금화 방법,소액결제현금화 디시,소액결제 현금화 후기,소액결제 현금화 수수료,소액결제 현금화 업체,소액결제 현금화 추천,소액결제 한도,소액결제 한도 확인,SKT 소액결제 현금화,KT 소액결제 현금화,LGU 소액결제 현금화,휴대폰 소액결제 현금화,핸드폰 소액결제 현금화,미납 소액결제 현금화,소액결제 즉시입금,소액결제 현금화 안전"
         pageType="service"
       />
@@ -73,7 +73,7 @@ const MicropaymentService: React.FC = () => {
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               소액결제 현금화<br />
-              <span className="text-sky-600">3분 즉시입금 · 합리적인 수수료</span>
+              <span className="text-sky-600">빠른 입금 안내 · 합리적인 수수료</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
               SKT · KT · LGU+ 모든 통신사 소액결제 현금화 가능!<br />
@@ -81,7 +81,7 @@ const MicropaymentService: React.FC = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-3 mb-8">
               <span className="bg-sky-100 text-sky-800 px-3 py-1 rounded-full text-sm font-semibold">✅ 소액결제 현금화 방법 간단</span>
-              <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">⚡ 평균 2분 47초 입금</span>
+              <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">⚡ 상담 후 순차 입금</span>
               <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">🛡️ 안전 거래 시스템</span>
               <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-semibold">💰 지급률 70~80%</span>
             </div>
@@ -113,9 +113,9 @@ const MicropaymentService: React.FC = () => {
                   </p>
                   <ul className="space-y-2 text-gray-700">
                     <li className="flex items-center"><span className="w-2 h-2 bg-sky-600 rounded-full mr-3 flex-shrink-0" />모든 통신사 지원: SKT, KT, LGU+ 상관없이 이용 가능</li>
-                    <li className="flex items-center"><span className="w-2 h-2 bg-sky-600 rounded-full mr-3 flex-shrink-0" />평균 2분 47초 입금완료 — 빠른 처리 속도</li>
+                    <li className="flex items-center"><span className="w-2 h-2 bg-sky-600 rounded-full mr-3 flex-shrink-0" />상담·결제 확인 후 입금 진행 — 안내된 절차대로 처리</li>
                     <li className="flex items-center"><span className="w-2 h-2 bg-sky-600 rounded-full mr-3 flex-shrink-0" />미납·정책 제한 고객도 상담 가능</li>
-                    <li className="flex items-center"><span className="w-2 h-2 bg-sky-600 rounded-full mr-3 flex-shrink-0" />정식 사업자 등록 — 안전 거래 시스템</li>
+                    <li className="flex items-center"><span className="w-2 h-2 bg-sky-600 rounded-full mr-3 flex-shrink-0" />상담 시 절차·수수료 사전 안내</li>
                   </ul>
                 </div>
                 <div className="bg-sky-50 rounded-xl p-6">
@@ -242,10 +242,10 @@ const MicropaymentService: React.FC = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { icon: "⚡", title: "3분 즉시입금", desc: "소액결제 현금화 신청부터 입금까지 평균 2분 47초! 긴급 비상금도 신속하게 해결합니다." },
+                { icon: "⚡", title: "빠른 입금 안내", desc: "상담과 결제 확인이 끝나는 대로 순차적으로 입금을 진행합니다." },
                 { icon: "💰", title: "지급률 70~80%", desc: "소액결제 현금화 수수료 20~30%, 투명한 지급률을 적용합니다." },
                 { icon: "🔥", title: "미납 상담 가능", desc: "미납·정책 제한으로 거절당하셨나요? 고릴라티켓은 다수의 상담 사례를 보유하고 있습니다." },
-                { icon: "🛡️", title: "24시간 안전 상담", desc: "정식 사업자 등록 업체. 소액결제 현금화 안전 거래를 24시간 365일 지원합니다." },
+                { icon: "🛡️", title: "24시간 상담 운영", desc: "상담 시 진행 절차와 수수료를 먼저 안내해 드립니다. 24시간 365일 상담 가능합니다." },
               ].map((item) => (
                 <div key={item.title} className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
                   <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">

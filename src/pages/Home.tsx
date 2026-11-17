@@ -32,9 +32,9 @@ const HeroSection: React.FC = () => (
               소액결제현금화 미납·정책도 상담 가능!
             </span>
             <br />
-            <span className="text-blue-600">정보이용료현금화</span> No.1
+            <span className="text-blue-600">정보이용료현금화</span> 상담
             <br />
-            <span className="text-sky-600">3분 초스피드 입금 완료</span>
+            <span className="text-sky-600">빠른 입금 안내</span>
           </h1>
 
           <div className="flex justify-center mb-6">
@@ -86,22 +86,22 @@ const HeroSection: React.FC = () => (
             까지,
             <br />
             <span className="text-red-600 font-bold">
-              미납/정책도 상담 가능, 5분이면 거래완료!
+              미납/정책도 상담 가능, 상담 후 순차 진행!
             </span>
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 mb-8">
             <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
-              ✅ 정식사업자등록
+              ✅ 상담 후 절차 안내
             </div>
             <div className="bg-sky-100 text-sky-800 px-3 py-1 rounded-full text-sm font-semibold">
-              ⚡ 누적 3만건+ 거래실적
+              ⚡ 빠른 입금 안내
             </div>
             <div className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">
               🛡️ 안전거래 시스템
             </div>
             <div className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-semibold">
-              🕐 24시간 실시간 승인
+              🕐 24시간 상담 운영
             </div>
           </div>
 
@@ -112,8 +112,8 @@ const HeroSection: React.FC = () => (
               </div>
               <div className="grid grid-cols-3 gap-4">
                 <div>
-                  <div className="text-xl font-bold text-sky-600">100건+</div>
-                  <div className="text-xs text-gray-500">오늘 거래완료</div>
+                  <div className="text-xl font-bold text-sky-600">24시간</div>
+                  <div className="text-xs text-gray-500">상담 운영</div>
                 </div>
                 <div>
                   <div className="text-xl font-bold text-blue-600">70~80%</div>
@@ -125,13 +125,13 @@ const HeroSection: React.FC = () => (
                 </div>
               </div>
               <div className="text-xs text-gray-400 mt-3 border-t pt-2">
-                ⚡ 평균 2분 47초 입금완료 | 💯 높은 고객만족도 | 🏆 누적 거래량 3만건+
+                ⚡ 상담 후 순차 입금 안내 | 💬 24시간 1:1 상담 | 🕐 연중무휴 운영
               </div>
             </div>
           </div>
 
           <p className="text-sm text-gray-500 mt-4">
-            정식 사업자 등록 업체 고릴라티켓, 소액결제현금화 안전거래 시스템!
+            고릴라티켓 소액결제현금화 상담 안내!
           </p>
         </div>
       </div>
@@ -193,9 +193,9 @@ const ServicesSection: React.FC = () => (
               소액결제 현금화
             </h3>
             <p className="text-gray-600 mb-4 text-sm md:text-base">
-              휴대폰 소액결제 한도 즉시 현금으로! 평균 3분 이내,{" "}
+              휴대폰 소액결제 한도 현금화 상담!{" "}
               <strong className="text-sky-600">지급률 70~80%</strong>로
-              신속하게 비상금을 마련하세요.
+              비상금 마련을 도와드립니다.
             </p>
             <span className="text-sky-600 font-semibold hover:text-sky-700 transition-colors">
               소액결제현금화 방법 보기 →
@@ -327,12 +327,11 @@ const WhyChooseUsSection: React.FC = () => (
             <span className="text-white text-3xl">⚡</span>
           </div>
           <h3 className="text-xl font-bold text-gray-900 mb-3">
-            3분 초고속 입금
+            빠른 입금 안내
           </h3>
           <p className="text-gray-600">
-            신청부터 입금까지 평균 3분! 기다림 없이 신속하게 현금화 문제를
-            해결하세요.{" "}
-            <strong className="text-sky-600">5분이면 거래완료</strong>
+            상담과 확인이 끝나는 대로 순차적으로 입금을 진행합니다.{" "}
+            <strong className="text-sky-600">24시간 상담 운영</strong>
           </p>
         </div>
 
@@ -359,7 +358,7 @@ const WhyChooseUsSection: React.FC = () => (
           </h3>
           <p className="text-gray-600">
             <strong className="text-purple-600">안정적인 거래규모 달성</strong>
-            ! 정식 사업자 등록으로 안전거래를 위해 노력합니다.
+            ! 상담 시 진행 절차와 수수료를 사전에 안내합니다.
           </p>
         </div>
       </div>
@@ -367,14 +366,14 @@ const WhyChooseUsSection: React.FC = () => (
       <div className="mt-16">
         <div className="bg-white rounded-3xl shadow-xl p-8">
           <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
-            📊 고릴라티켓 실시간 통계
+            📊 고릴라티켓 이용 안내
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="text-3xl font-bold text-blue-600 mb-2">
-                누적 3만건+
+                24시간
               </div>
-              <div className="text-sm text-gray-600">누적 거래건수</div>
+              <div className="text-sm text-gray-600">상담 운영</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-sky-600 mb-2">
@@ -397,7 +396,7 @@ const WhyChooseUsSection: React.FC = () => (
           </div>
           <div className="text-center mt-6">
             <p className="text-gray-500 text-sm">
-              📈 실시간 업데이트 | ✅ 정식 사업자 등록 업체 |  신뢰할 수 있는
+              📈 최신 정보 업데이트 | ✅ 상담 후 절차 안내 |  신뢰할 수 있는
               고릴라티켓
             </p>
           </div>
@@ -607,8 +606,8 @@ const Home: React.FC = () => {
   return (
     <>
       <SEO 
-        title="소액결제현금화 3분 즉시입금"
-        description="고릴라티켓 소액결제현금화 전문! SKT·KT·LGU+ 소액결제 현금화, 미납·정책도 상담 가능, 3분 칼입금. 소액결제 방법·수수료·후기 확인. 24시간 365일 상담 가능."
+        title="소액결제현금화 상담 안내"
+        description="고릴라티켓 소액결제현금화 상담 안내. SKT·KT·LGU+ 소액결제 현금화, 미납·정책도 상담 가능, 빠른 입금 안내. 소액결제 방법·수수료·후기 확인. 24시간 상담 운영."
         keywords="소액결제현금화,소액결제 현금화,소액결제 현금화 업체 추천,소액결제 현금화 즉시입금,미납 소액결제 현금화,소액결제 현금화 안전,휴대폰 소액결제 현금화"
         pageType="home"
       />
