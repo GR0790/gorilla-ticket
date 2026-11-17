@@ -1,275 +1,156 @@
 import type React from "react";
 import { Link } from "react-router-dom";
-import Breadcrumb from "../components/Breadcrumb";
 import SEO from "../components/SEO";
+import { ArrowLink, CTABand, ConsultButton, PageHero, SectionHead } from "../components/ui";
+import { services } from "../data/services";
 
-const Reviews: React.FC = () => {
-  const reviews = [
-    {
-      id: 1,
-      name: "김*동",
-      service: "소액결제 현금화",
-      rating: 5,
-      content:
-        "정말 급했는데 빠르게 입금됐어요! 상담도 친절하시고 소액결제 현금화 정말 만족스러웠습니다. 고릴라티켓 덕분에 잘 해결했어요. 다음에도 꼭 이용할게요!",
-      amount: "50만원",
-    },
-    {
-      id: 2,
-      name: "이*민",
-      service: "정보이용료 현금화",
-      rating: 5,
-      content:
-        "타업체보다 정보이용료 현금화 수수료도 저렴하고 입금도 빨라서 좋았어요. 다음에도 이용할게요! 안전한 고릴라티켓 찾아서 다행이에요.",
-      amount: "80만원",
-    },
-    {
-      id: 3,
-      name: "박*수",
-      service: "신용카드 현금화",
-      rating: 4,
-      content:
-        "신용카드 현금화 절차가 복잡할 줄 알았는데 고릴라티켓은 생각보다 간편하고 안전하게 처리해주셔서 감사합니다. 믿고 맡길 수 있겠어요.",
-      amount: "100만원",
-    },
-    {
-      id: 4,
-      name: "최*영",
-      service: "상품권 현금화",
-      rating: 5,
-      content:
-        "문화상품권 현금화 처음 해봤는데 설명도 자세히 해주시고 서비스가 좋아서 만족합니다. 24시간 상담 가능한 것도 너무 좋아요!",
-      amount: "30만원",
-    },
-    {
-      id: 5,
-      name: "정*호",
-      service: "소액결제 현금화",
-      rating: 5,
-      content:
-        "다른 업체에서 사기 당할 뻔했는데 고릴라티켓은 정말 믿을 수 있었어요. 투명한 수수료와 빠른 처리속도에 감동했습니다.",
-      amount: "70만원",
-    },
-    {
-      id: 6,
-      name: "장*희",
-      service: "정보이용료 현금화",
-      rating: 4,
-      content:
-        "처음에는 불안했지만 상담원분이 친절하게 설명해주셔서 안심하고 진행할 수 있었어요. 입금도 약속 시간보다 빨리 되었습니다.",
-      amount: "45만원",
-    },
-    {
-      id: 7,
-      name: "윤*준",
-      service: "신용카드 현금화",
-      rating: 5,
-      content:
-        "급하게 병원비가 필요했는데 고릴라티켓 덕분에 해결했어요. 밤늦은 시간에도 친절하게 상담받을 수 있어서 정말 감사했습니다.",
-      amount: "120만원",
-    },
-    {
-      id: 8,
-      name: "강*미",
-      service: "상품권 현금화",
-      rating: 5,
-      content:
-        "해피머니 상품권 현금화 처음 해봤는데 생각보다 간단하고 빨라서 놀랐어요. 서비스도 친절하고 좋았습니다.",
-      amount: "25만원",
-    },
-  ];
+const cases = [
+  {
+    tag: "상품권 매입",
+    title: "선물받은 문화상품권 5만 원권, 사용 계획이 없어진 경우",
+    situation: "두 장을 받았지만 쓸 곳이 정해지지 않아 보관만 하고 있었습니다.",
+    checked: "발행사와 잔액, 유효기간, 이미 등록된 상품권인지 확인했습니다.",
+    guided: "잔액이 그대로라면 매입이 가능하다고 안내하고, 조건을 먼저 정리해 드렸습니다.",
+  },
+  {
+    tag: "휴대폰 소액결제",
+    title: "이번 달 결제 한도가 얼마나 남았는지 궁금한 경우",
+    situation: "상품권을 사고 싶은데 한도가 남아 있는지 몰라 결제를 미루고 있었습니다.",
+    checked: "통신사와 요금제, 이번 달 사용 금액을 확인했습니다.",
+    guided: "통신사 앱에서 남은 한도를 확인하는 방법과, 결제 시 다음 달 청구 시점을 함께 안내했습니다.",
+  },
+  {
+    tag: "신용카드 구매",
+    title: "할부로 결제하면 총 얼마가 되는지 알고 싶은 경우",
+    situation: "매달 나가는 금액은 알겠는데 전체 금액이 얼마인지 계산이 어려웠습니다.",
+    checked: "카드사, 할부 개월, 카드 결제일과 청구일을 확인했습니다.",
+    guided: "수수료를 포함한 총액을 계산해 보여드리고, 결제 전에 다시 확인하도록 안내했습니다.",
+  },
+  {
+    tag: "정보이용료 게임재화",
+    title: "확률형 아이템을 사기 전에 구성을 확인하려는 경우",
+    situation: "원하는 아이템이 나올 확률과 구성이 궁금했습니다.",
+    checked: "게임과 스토어, 판매 단위와 확률 표시를 확인했습니다.",
+    guided: "구성과 확률, 환불 기준을 먼저 설명하고 결과는 보장되지 않는다는 점을 안내했습니다.",
+  },
+];
 
-  const stats = {
-    totalReviews: 1247,
-    averageRating: 4.8,
-    satisfactionRate: 98.2,
-    repeatCustomers: 89.5,
-  };
+const questions = [
+  "상품권 잔액이 얼마인지 모르겠어요",
+  "일부만 사용한 상품권도 확인되나요",
+  "휴대폰 결제가 자꾸 실패해요",
+  "카드 할부 개월을 줄일 수 있나요",
+  "게임 재화 환불이 가능한가요",
+  "상담 기록을 다시 보고 싶어요",
+];
 
-  const renderStars = (rating: number) => {
-    const stars = [];
-    for (let i = 0; i < 5; i++) {
-      stars.push(
-        <span
-          key={`star-${i}-filled-${i < rating}`}
-          className={`text-lg ${i < rating ? "text-yellow-400" : "text-gray-300"}`}
-        >
-          ★
-        </span>,
-      );
-    }
-    return stars;
-  };
+const Reviews: React.FC = () => (
+  <>
+    <SEO
+      title="상담 사례 — 자주 오가는 상황과 안내 방향"
+      description="상품권 매입, 휴대폰 소액결제, 신용카드 구매, 정보이용료 게임재화 상담에서 자주 오가는 상황과 확인 항목, 안내 방향을 정리했습니다."
+      keywords="상담 사례,상품권 매입 사례,휴대폰 결제 상담,카드 할부 상담"
+    />
+    <PageHero
+      eyebrow="Consultation cases"
+      crumbs={[{ label: "상담 사례" }]}
+      title={
+        <>
+          상담에서 자주 오가는
+          <br />
+          상황을 정리했습니다.
+        </>
+      }
+      lead="상담 내용을 그대로 옮기지 않고, 반복해서 나오는 상황과 확인 항목, 안내 방향만 추려 정리했습니다. 개인별 조건은 상담에서 확인합니다."
+    />
 
-  return (
-    <>
-      <SEO
-        title="고객 후기 1,247건 확인하기"
-        description="고릴라티켓 실제 고객 후기 1,247건, 평균 평점 4.8점. 소액결제·정보이용료·신용카드·상품권 현금화 서비스 후기를 확인하세요."
-        keywords="고릴라티켓 후기, 소액결제현금화 후기, 정보이용료현금화 후기, 신용카드현금화 후기, 상품권현금화 후기"
-      />
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          "@id": "https://xn--299a64rxvbk71bjne.com/#organization",
-          name: "고릴라티켓",
-          url: "https://xn--299a64rxvbk71bjne.com",
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.8",
-            reviewCount: "1247",
-            bestRating: "5",
-            worstRating: "1",
-          },
-          review: reviews.slice(0, 3).map((r) => ({
-            "@type": "Review",
-            author: { "@type": "Person", name: r.name },
-            reviewRating: {
-              "@type": "Rating",
-              ratingValue: r.rating.toString(),
-              bestRating: "5",
-            },
-            reviewBody: r.content,
-          })),
-        })}
-      </script>
-
-      <div className="min-h-screen bg-gray-50">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-sky-50 to-sky-100 py-12 md:py-20">
-          <div className="container mx-auto px-4 text-center">
-            <Breadcrumb items={[{ label: "고릴라티켓", path: "/" }, { label: "고객 후기" }]} />
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              고릴라티켓 고객 후기
-            </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-              실제 고객님들의 생생한 경험담을 확인해보세요.
-              <br />
-              소액결제, 정보이용료, 신용카드, 상품권 현금화 서비스에 대한 솔직한
-              후기입니다.
-            </p>
-          </div>
-        </section>
-
-        <div className="container mx-auto px-4 py-12 md:py-16">
-          {/* 통계 섹션 */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-16">
-            <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
-              <div className="text-3xl md:text-4xl font-bold text-sky-600 mb-2">
-                {stats.totalReviews.toLocaleString()}+
+    <section className="border-b border-line bg-white">
+      <div className="wrap py-16 md:py-24">
+        <div className="grid gap-4 md:grid-cols-2">
+          {cases.map((c) => (
+            <article key={c.title} className="rounded-xl border border-line bg-frost p-7 md:p-8">
+              <div className="flex items-center justify-between">
+                <span className="rounded-md border border-azure/25 bg-azure/5 px-2.5 py-1 text-[10.5px] font-semibold text-azure">
+                  {c.tag}
+                </span>
+                <span aria-hidden="true" className="num text-[10.5px] font-semibold text-ink-muted">
+                  Case
+                </span>
               </div>
-              <div className="text-gray-600 text-sm md:text-base">총 후기 수</div>
-            </div>
-            <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
-              <div className="text-3xl md:text-4xl font-bold text-yellow-500 mb-2">
-                {stats.averageRating}★
-              </div>
-              <div className="text-gray-600 text-sm md:text-base">평균 평점</div>
-            </div>
-            <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
-              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
-                {stats.satisfactionRate}%
-              </div>
-              <div className="text-gray-600 text-sm md:text-base">만족도</div>
-            </div>
-            <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
-              <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2">
-                {stats.repeatCustomers}%
-              </div>
-              <div className="text-gray-600 text-sm md:text-base">재이용률</div>
-            </div>
-          </div>
-
-          {/* 후기 목록 */}
-          <div className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-              실제 고객님들의 생생한 후기
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              {reviews.map((review) => (
-                <div
-                  key={review.id}
-                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center">
-                      <div className="w-12 h-12 bg-sky-100 rounded-full flex items-center justify-center mr-4">
-                        <span className="text-sky-600 font-bold text-lg">
-                          {review.name.charAt(0)}
-                        </span>
-                      </div>
-                      <div>
-                        <div className="font-bold text-gray-900">
-                          {review.name}
-                        </div>
-                        <div className="text-sm text-gray-500">
-                          {review.service}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="flex items-center">
-                        {renderStars(review.rating)}
-                      </div>
-                    </div>
-                  </div>
-
-                  <p className="text-gray-700 mb-4 leading-relaxed">
-                    "{review.content}"
-                  </p>
-
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="bg-sky-50 text-sky-700 px-3 py-1 rounded-full">
-                      처리금액: {review.amount}
-                    </span>
-                    <span className="text-gray-500">
-                      ⭐ {review.rating}.0 / 5.0
-                    </span>
-                  </div>
+              <h2 className="mt-5 text-[1.12rem] font-semibold leading-snug text-ink">{c.title}</h2>
+              <dl className="mt-5 space-y-3 text-[13px] leading-[1.85]">
+                <div>
+                  <dt className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-ink-muted">상황</dt>
+                  <dd className="mt-1 text-ink-soft">{c.situation}</dd>
                 </div>
-              ))}
-            </div>
-          </div>
+                <div>
+                  <dt className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-ink-muted">확인한 것</dt>
+                  <dd className="mt-1 text-ink-soft">{c.checked}</dd>
+                </div>
+                <div>
+                  <dt className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-ink-muted">안내한 방향</dt>
+                  <dd className="mt-1 text-ink-soft">{c.guided}</dd>
+                </div>
+              </dl>
+            </article>
+          ))}
+        </div>
+        <p className="mt-6 text-[12px] leading-relaxed text-ink-muted">
+          ※ 위 사례는 상담에서 반복되는 상황을 재구성한 예시입니다. 실제 금액·조건은 상품권 상태와
+          통신사·카드사 정책에 따라 달라집니다.
+        </p>
+      </div>
+    </section>
 
-          {/* 더 많은 후기 보기 */}
-          <div className="text-center mb-12">
-            <button className="bg-sky-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-sky-700 transition-colors">
-              더 많은 후기 보기
-            </button>
-          </div>
-
-          {/* 후기 작성 유도 */}
-          <div className="bg-gradient-to-r from-sky-600 to-sky-700 rounded-2xl p-8 md:p-12 text-white text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              🦕 고릴라티켓 서비스는 어떠셨나요?
-            </h2>
-            <p className="text-lg md:text-xl mb-8 opacity-90">
-              소중한 후기를 남겨주시면 다른 고객님들께 큰 도움이 됩니다.
-              <br />
-              여러분의 솔직한 의견을 기다리고 있어요!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="#"
-                onClick={(e) => { e.preventDefault(); (window as any).startConsult(); }}
-                className="inline-block bg-yellow-400 text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors"
-              >
-                💬 후기 작성하기
-              </a>
-              <Link
-                to="/contact"
-                className="inline-block bg-white text-sky-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-              >
-                📞 상담 문의하기
-              </Link>
-            </div>
+    <section className="border-b border-line bg-frost">
+      <div className="wrap grid gap-12 py-20 md:py-28 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+        <div>
+          <SectionHead
+            eyebrow="Common questions"
+            title={<>이런 질문으로 시작합니다.</>}
+            lead="짧게 물어보셔도 됩니다. 확인에 필요한 내용은 이어서 안내드립니다."
+          />
+          <div className="mt-8">
+            <ConsultButton label="채널톡 1:1 상담" size="lg" />
           </div>
         </div>
+        <ul className="grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2">
+          {questions.map((q, i) => (
+            <li key={q} className="flex items-baseline gap-3 bg-white px-5 py-4">
+              <span className="num text-[10px] font-bold text-azure">{String(i + 1).padStart(2, "0")}</span>
+              <span className="text-[13px] leading-relaxed text-ink-soft">{q}</span>
+            </li>
+          ))}
+        </ul>
       </div>
-    </>
-  );
-};
+    </section>
+
+    <section className="border-b border-line bg-white">
+      <div className="wrap py-16 md:py-20">
+        <div className="flex flex-wrap gap-x-8 gap-y-3">
+          {services.map((s) => (
+            <Link key={s.slug} to={s.slug} className="text-[13px] font-semibold text-azure hover:text-azure-deep">
+              {s.nav} 안내 →
+            </Link>
+          ))}
+        </div>
+        <div className="mt-8">
+          <ArrowLink to="/safety">안전 안내 보기</ArrowLink>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      eyebrow="Your case"
+      title={
+        <>
+          사례에 없는 상황이라도
+          <br className="hidden sm:block" /> 그대로 알려주세요.
+        </>
+      }
+      body="상품권 종류나 결제 방법만 알려주셔도 확인할 수 있습니다."
+    />
+  </>
+);
 
 export default Reviews;

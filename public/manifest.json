@@ -1,11 +1,11 @@
 {
-  "name": "고릴라티켓 - 현금화 전문업체",
+  "name": "고릴라티켓 - 상품권 구매·매입 안내",
   "short_name": "고릴라티켓",
-  "description": "소액결제, 정보이용료, 신용카드, 상품권 현금화 전문업체",
+  "description": "상품권 매입과 휴대폰·카드 상품권 구매, 정보이용료 게임재화 구매 절차를 확인해 안내하는 사이트",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#10b981",
+  "background_color": "#F8FAFC",
+  "theme_color": "#0B1220",
   "icons": [
     {
       "src": "/favicon-16x16.png",

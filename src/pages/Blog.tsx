@@ -1,185 +1,132 @@
-import React, { useState } from "react";
+import { useMemo, useState } from "react";
+import type React from "react";
 import { Link } from "react-router-dom";
-import Breadcrumb from "../components/Breadcrumb";
 import SEO from "../components/SEO";
-import { blogPosts as localBlogPosts } from "../data/blogPosts";
+import { CTABand, PageHero } from "../components/ui";
+import { blogPosts } from "../data/blogPosts";
+
+const posts = [...blogPosts].sort((a, b) => (a.fields.date < b.fields.date ? 1 : -1));
 
 const Blog: React.FC = () => {
-  const [blogPosts] = useState<any[]>(localBlogPosts);
-  const loading = false;
+  const categories = useMemo(
+    () => ["전체", ...Array.from(new Set(posts.map((p) => p.fields.category)))],
+    [],
+  );
+  const [active, setActive] = useState("전체");
 
-  const categories = [
-    "전체", "소액결제", "정보이용료", "신용카드", "상품권",
-    "안전가이드", "업계분석", "금융정보", "한도관리", "총정리 가이드"
-  ];
-
-  const [selectedCategory, setSelectedCategory] = React.useState("전체");
-
-  const filteredPosts =
-    selectedCategory === "전체"
-      ? blogPosts
-      : blogPosts.filter((post) => post.fields.category === selectedCategory);
-
-  const featuredPost = blogPosts[0];
-
-  if (loading) {
-    return <div className="text-center py-20">블로그 글을 불러오는 중...</div>;
-  }
-
-  if (!featuredPost) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            아직 작성된 글이 없습니다
-          </h1>
-          <p className="text-gray-600 mb-8">
-            새로운 정보와 함께 곧 돌아오겠습니다.
-          </p>
-          <Link
-            to="/"
-            className="bg-sky-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-sky-700 transition-colors"
-          >
-            홈으로 돌아가기
-          </Link>
-        </div>
-      </div>
-    );
-  }
+  const featured = posts[0];
+  const rest = posts.slice(1);
+  const filtered = active === "전체" ? rest : rest.filter((p) => p.fields.category === active);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
       <SEO
-        title="정보 블로그 - 소액결제현금화 최신 정보"
-        description="소액결제현금화, 정보이용료·신용카드·상품권 현금화 최신 정보와 한도·수수료·안전 이용 가이드를 고릴라티켓 블로그에서 확인하세요."
-        keywords="소액결제현금화 정보, 소액결제 팁, 소액결제 블로그, 소액결제 한도, 고릴라티켓 블로그"
+        title="이야기 — 상품권과 결제 절차 정리"
+        description="상품권 매입 전 확인 사항, 휴대폰 결제 한도, 카드 할부, 정보이용료 게임 재화까지. 상담 전에 읽어두면 좋은 내용을 정리했습니다."
+        keywords="상품권 매입,휴대폰 소액결제 한도,카드 할부,정보이용료,게임 재화"
       />
-      <section className="bg-gradient-to-br from-purple-50 to-purple-100 py-12 md:py-20">
-        <div className="container mx-auto px-4 text-center">
-            <Breadcrumb items={[{ label: "고릴라티켓", path: "/" }, { label: "정보 블로그" }]} />
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            고릴라티켓 정보 블로그
-          </h1>
-          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            현금화 서비스에 대한 유용한 정보와 안전한 거래 가이드,
+      <PageHero
+        eyebrow="Journal"
+        crumbs={[{ label: "이야기" }]}
+        title={
+          <>
+            결제와 상품권,
             <br />
-            업계 동향까지 모든 정보를 한눈에 확인하세요.
-          </p>
-        </div>
-      </section>
+            헷갈리는 부분만 모았습니다.
+          </>
+        }
+        lead="상담 전에 읽어두면 확인이 빨라지는 내용을 정리했습니다. 실제 조건은 상담에서 다시 확인합니다."
+      />
 
-      <div className="container mx-auto px-4 py-12 md:py-16">
-        <div className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-            📌 최신 추천 글
-          </h2>
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="bg-gradient-to-br from-sky-400 to-sky-600 p-12 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <span className="text-8xl md:text-9xl">
-                    {featuredPost.fields.image}
-                  </span>
+      {featured && (
+        <section className="border-b border-line bg-frost">
+          <div className="wrap py-16 md:py-20">
+            <Link
+              to={`/blog/${featured.fields.id}`}
+              className="group grid overflow-hidden rounded-2xl border border-line bg-white transition-colors hover:border-azure/45 lg:grid-cols-[1.1fr_0.9fr]"
+            >
+              <div className="border-line p-8 md:p-12 lg:border-r">
+                <div className="flex items-center gap-3 text-[10.5px] uppercase tracking-[0.18em] text-ink-muted">
+                  <span className="rounded-full border border-azure/40 px-3 py-1 text-azure">Featured</span>
+                  <span>{featured.fields.category}</span>
+                </div>
+                <h2 className="mt-7 font-display text-[1.7rem] leading-[1.45] text-ink transition-colors group-hover:text-azure md:text-[2.05rem]">
+                  {featured.fields.title}
+                </h2>
+                <div className="mt-8 flex items-center gap-4 text-[12px] text-ink-muted">
+                  <span>{featured.fields.date}</span>
+                  <span className="h-3 w-px bg-line" />
+                  <span>{featured.fields.readTime} 읽기</span>
                 </div>
               </div>
-              <div className="p-8 md:p-12">
-                <div className="flex items-center mb-4">
-                  <span className="bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm font-semibold">
-                    {featuredPost.fields.category}
+              <div className="flex flex-col justify-between bg-frost p-8 md:p-12">
+                <p className="text-[14px] leading-[2] text-ink-soft">{featured.fields.excerpt}</p>
+                <span className="mt-8 inline-flex items-center gap-2 text-[13px] font-semibold text-azure">
+                  글 읽기
+                  <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
+                    →
                   </span>
-                  <span className="text-gray-500 text-sm ml-4">
-                    {featuredPost.fields.readTime} 읽기
-                  </span>
-                </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-                  {featuredPost.fields.title}
-                </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {featuredPost.fields.excerpt}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {featuredPost.fields.tags.map((tag: string) => (
-                    <span
-                      key={tag}
-                      className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm"
-                    >
-                      #{tag}
-                    </span>
-                  ))}
-                </div>
-                <Link
-                  to={`/blog/${featuredPost.fields.id}`}
-                  className="inline-block bg-sky-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-sky-700 transition-colors"
-                >
-                  자세히 읽기 →
-                </Link>
+                </span>
               </div>
-            </div>
+            </Link>
           </div>
-        </div>
+        </section>
+      )}
 
-        <div className="mb-12">
-          <div className="flex flex-wrap justify-center gap-2 md:gap-4">
-            {categories.map((category) => (
+      <section className="border-b border-line bg-white">
+        <div className="wrap py-16 md:py-24">
+          <div className="flex flex-wrap items-center gap-2">
+            {categories.map((c) => (
               <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
-                  selectedCategory === category
-                    ? "bg-sky-600 text-white"
-                    : "bg-white text-gray-600 hover:bg-sky-50 hover:text-sky-600"
+                key={c}
+                type="button"
+                onClick={() => setActive(c)}
+                className={`rounded-full border px-4 py-2 text-[12.5px] transition-colors ${
+                  active === c
+                    ? "border-azure bg-azure text-white"
+                    : "border-line text-ink-soft hover:border-azure hover:text-azure"
                 }`}
               >
-                {category}
+                {c}
               </button>
             ))}
           </div>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16">
-          {filteredPosts.slice(1).map((post: any) => (
-            <Link
-              key={post.sys.id}
-              to={`/blog/${post.fields.id}`}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow block"
-            >
-              <div className="bg-gradient-to-br from-blue-100 to-purple-100 p-8 text-center">
-                <span className="text-5xl">{post.fields.image}</span>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">
-                    {post.fields.category}
-                  </span>
-                  <span className="text-gray-500 text-sm">{post.fields.readTime}</span>
+          <div className="mt-10 grid gap-px overflow-hidden rounded-xl border border-line bg-line md:grid-cols-2">
+            {filtered.map((p) => (
+              <Link key={p.fields.id} to={`/blog/${p.fields.id}`} className="group bg-frost p-7 transition-colors hover:bg-white md:p-8">
+                <div className="flex items-center gap-3 text-[10.5px] font-medium uppercase tracking-[0.16em] text-ink-muted">
+                  <span className="text-azure">{p.fields.category}</span>
+                  <span className="h-px w-5 bg-steel" />
+                  <span>{p.fields.readTime}</span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
-                  {post.fields.title}
+                <h3 className="mt-4 font-display text-[1.15rem] leading-[1.55] text-ink transition-colors group-hover:text-azure">
+                  {p.fields.title}
                 </h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {post.fields.excerpt}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {post.fields.tags.map((tag: string) => (
-                    <span
-                      key={tag}
-                      className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs"
-                    >
-                      #{tag}
-                    </span>
-                  ))}
-                </div>
-                <div className="text-center">
-                  <span className="text-sky-600 font-semibold hover:text-sky-700 transition-colors">
-                    읽기 →
-                  </span>
-                </div>
-              </div>
-            </Link>
-          ))}
+                <p className="mt-3 text-[13px] leading-[1.9] text-ink-soft">{p.fields.excerpt}</p>
+                <p className="mt-5 text-[11px] text-ink-muted">{p.fields.date}</p>
+              </Link>
+            ))}
+            {filtered.length === 0 && (
+              <p className="bg-frost py-16 text-center text-[13px] text-ink-muted md:col-span-2">
+                이 주제의 글은 아직 준비 중입니다.
+              </p>
+            )}
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      <CTABand
+        eyebrow="Need an answer now?"
+        title={
+          <>
+            글보다 빠른 답이 필요할 때,
+            <br className="hidden sm:block" /> 채널톡으로 물어보세요.
+          </>
+        }
+      />
+    </>
   );
 };
+
 export default Blog;

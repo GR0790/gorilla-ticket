@@ -1,380 +1,158 @@
 import type React from "react";
 import { Link } from "react-router-dom";
-import Breadcrumb from "../components/Breadcrumb";
 import SEO from "../components/SEO";
+import { ArrowLink, CTABand, ConsultButton, PageHero, SectionHead } from "../components/ui";
+import { site } from "../data/site";
 
-const Safety: React.FC = () => {
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <SEO
-        title="안전 거래 시스템 안내"
-        description="고릴라티켓 안전 거래 안내. 상담 절차와 개인정보 보호를 통해 소액결제현금화를 안심하고 이용하세요."
-        keywords="소액결제현금화 안전, 안전거래 보장, 고릴라티켓 안전, 소액결제 사기 예방"
-      />
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-blue-100 py-12 md:py-20">
-        <div className="container mx-auto px-4 text-center">
-            <Breadcrumb items={[{ label: "고릴라티켓", path: "/" }, { label: "안전 거래 안내" }]} />
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            고릴라티켓 안전 거래 시스템
-          </h1>
-          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            고객님의 안전한 거래를 위해 다양한 보안 시스템과
-            <br />
-            투명한 거래 프로세스를 운영하고 있습니다.
-          </p>
-        </div>
-      </section>
+const rules = [
+  {
+    no: "01",
+    title: "먼저 보내달라고 하지 않습니다",
+    body: "조건을 확인하기 전에 금액이나 상품권을 먼저 보내달라고 요구하지 않습니다. 확인한 뒤 절차를 안내드립니다.",
+  },
+  {
+    no: "02",
+    title: "필요한 정보만 확인합니다",
+    body: "상담에 필요한 이름과 연락처, 진행에 필요한 최소한의 정보만 확인합니다. 주민등록번호와 비밀번호는 요구하지 않습니다.",
+  },
+  {
+    no: "03",
+    title: "기록이 남는 대화만 씁니다",
+    body: "조건과 진행 상황은 채널톡 대화에 남깁니다. 개인 메신저로만 진행하자는 요청은 받지 않습니다.",
+  },
+  {
+    no: "04",
+    title: "불법 목적 거래는 하지 않습니다",
+    body: "타인 명의 결제, 출처가 확인되지 않는 상품권, 재판매를 목적으로 한 대량 구매는 확인되는 즉시 진행하지 않습니다.",
+  },
+];
 
-      <div className="container mx-auto px-4 py-12 md:py-16">
-        {/* 보안 인증 */}
-        <div className="text-center mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🔒</span>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                SSL 보안 인증
-              </h3>
-              <p className="text-gray-600">
-                모든 데이터 전송 시 SSL 256bit 암호화로 개인정보를 안전하게
-                보호합니다.
-              </p>
+const signs = [
+  {
+    title: "먼저 돈을 보내라고 할 때",
+    body: "조건 확인보다 입금을 먼저 요구한다면 정상적인 절차가 아닙니다. 대화를 멈추고 알려주세요.",
+  },
+  {
+    title: "개인 메신저로 옮기자고 할 때",
+    body: "기록이 남지 않는 채널로 옮기자는 요청은 받지 않습니다. 채널톡 대화에서 이어가세요.",
+  },
+  {
+    title: "주민등록번호를 요구할 때",
+    body: "상담과 진행에 주민등록번호는 필요하지 않습니다. 요구받았다면 화면을 남겨 알려주세요.",
+  },
+  {
+    title: "확인 없이 금액을 확정할 때",
+    body: "상품권 상태나 카드 조건을 보지 않고 금액을 확정하면 나중에 조건이 바뀌기 쉽습니다.",
+  },
+];
+
+const guides = [
+  { label: "진행 절차", to: "/how-to-use", desc: "상담부터 진행 확인까지 네 단계" },
+  { label: "상담 사례", to: "/reviews", desc: "자주 오가는 상황과 안내 방향" },
+  { label: "자주 묻는 질문", to: "/faq", desc: "주제별로 정리한 질문과 답" },
+];
+
+const Safety: React.FC = () => (
+  <>
+    <SEO
+      title="안전 안내 — 확인 기준과 주의사항"
+      description="고릴라티켓이 상담에서 지키는 기준과 이용자가 확인해야 할 주의사항을 정리했습니다. 먼저 보내달라는 요구, 개인 메신저 유도, 과도한 정보 요구에 주의하세요."
+      keywords="안전 안내,상담 주의사항,개인정보 보호,상품권 거래 주의"
+    />
+    <PageHero
+      eyebrow="Safety"
+      crumbs={[{ label: "안전 안내" }]}
+      title={
+        <>
+          확인하는 방식이
+          <br />
+          안전을 만듭니다.
+        </>
+      }
+      lead="상담에서 지키는 기준과, 이용자가 직접 확인해야 할 신호를 정리했습니다. 조금이라도 이상하다고 느껴지면 대화를 멈추고 알려주세요."
+    />
+
+    <section className="border-b border-line bg-white">
+      <div className="wrap py-20 md:py-28">
+        <SectionHead
+          eyebrow="Our rules"
+          title={<>상담에서 지키는 네 가지</>}
+          lead="이 기준은 상황이 달라도 바뀌지 않습니다."
+        />
+        <div className="mt-14 grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2">
+          {rules.map((r) => (
+            <div key={r.no} className="bg-frost p-7 md:p-9">
+              <span className="num text-[1.3rem] font-bold leading-none text-azure/25">{r.no}</span>
+              <h3 className="mt-5 text-[1.1rem] font-semibold text-ink">{r.title}</h3>
+              <p className="mt-3 text-[13.5px] leading-[1.9] text-ink-soft">{r.body}</p>
             </div>
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">📋</span>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                정식 절차 안내
-              </h3>
-              <p className="text-gray-600">
-                진행 절차와 수수료를 상담 시 먼저 안내해 드립니다.
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🛡️</span>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                개인정보보호
-              </h3>
-              <p className="text-gray-600">
-                개인정보보호법을 준수하며 고객 정보를 철저히 관리합니다.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* 보안 시스템 */}
-        <div className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-            🔐 고릴라티켓 보안 시스템
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
-                <span className="w-8 h-8 bg-sky-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-sky-600">🔒</span>
-                </span>
-                개인정보 보호 시스템
-              </h3>
-              <div className="space-y-4">
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-sky-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                    <div>
-                      <strong>암호화 저장:</strong> 모든 개인정보는 AES-256
-                      암호화하여 저장됩니다.
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-sky-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                    <div>
-                      <strong>접근 제한:</strong> 권한이 있는 담당자만
-                      개인정보에 접근 가능합니다.
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-sky-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                    <div>
-                      <strong>자동 삭제:</strong> 거래 완료 후 30일 이내 모든
-                      정보가 자동 삭제됩니다.
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-sky-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                    <div>
-                      <strong>로그 관리:</strong> 모든 접근 기록을 6개월간
-                      보관하여 추적 가능합니다.
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
-                <span className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-blue-600">🛡️</span>
-                </span>
-                거래 보안 시스템
-              </h3>
-              <div className="space-y-4">
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                    <div>
-                      <strong>실시간 검증:</strong> 모든 거래는 실시간으로
-                      검증되어 안전성을 높입니다.
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                    <div>
-                      <strong>이상 거래 탐지:</strong> AI 기반 이상 거래 탐지
-                      시스템으로 사기를 방지합니다.
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                    <div>
-                      <strong>다중 인증:</strong> 휴대폰 인증, 계좌 인증 등 다중
-                      인증 절차를 거칩니다.
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                    <div>
-                      <strong>거래 추적:</strong> 모든 거래 내역은 완전히 추적
-                      가능하도록 기록됩니다.
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 사기 업체 구별법 */}
-        <div className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-            ⚠️ 사기 업체 구별법
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-red-50 rounded-2xl p-8 border-2 border-red-200">
-              <h3 className="text-xl font-bold text-red-800 mb-6">
-                ❌ 이런 업체는 피하세요!
-              </h3>
-              <div className="space-y-3">
-                <ul className="space-y-2">
-                  <li className="flex items-start text-red-700">
-                    <span className="w-2 h-2 bg-red-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                    <strong>선입금 요구:</strong> 수수료나 보증금을 미리
-                    요구하는 업체
-                  </li>
-                  <li className="flex items-start text-red-700">
-                    <span className="w-2 h-2 bg-red-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                    <strong>과도한 지급률:</strong> 95% 이상의 비현실적인 지급률
-                    제시
-                  </li>
-                  <li className="flex items-start text-red-700">
-                    <span className="w-2 h-2 bg-red-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                    <strong>연락처 불분명:</strong> 휴대폰 번호만 제공하고 고정
-                    전화나 주소 없음
-                  </li>
-                  <li className="flex items-start text-red-700">
-                    <span className="w-2 h-2 bg-red-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                    <strong>급한 거래 종용:</strong> "지금 안 하면 기회 없다"며
-                    서두르게 함
-                  </li>
-                  <li className="flex items-start text-red-700">
-                    <span className="w-2 h-2 bg-red-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                    <strong>신분증 요구:</strong> 필요 이상의 개인정보나 신분증
-                    사본 요구
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="bg-sky-50 rounded-2xl p-8 border-2 border-sky-200">
-              <h3 className="text-xl font-bold text-sky-800 mb-6">
-                ✅ 이런 업체는 안전해요!
-              </h3>
-              <div className="space-y-3">
-                <ul className="space-y-2">
-                  <li className="flex items-start text-sky-700">
-                    <span className="w-2 h-2 bg-sky-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                    <strong>사업자등록증:</strong> 정식 사업자등록증과
-                    통신판매업신고증 보유
-                  </li>
-                  <li className="flex items-start text-sky-700">
-                    <span className="w-2 h-2 bg-sky-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                    <strong>투명한 수수료:</strong> 지급률과 수수료를 명확하게
-                    공개
-                  </li>
-                  <li className="flex items-start text-sky-700">
-                    <span className="w-2 h-2 bg-sky-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                    <strong>완전한 연락처:</strong> 고정 전화, 주소, 이메일 등
-                    완전한 연락처 제공
-                  </li>
-                  <li className="flex items-start text-sky-700">
-                    <span className="w-2 h-2 bg-sky-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                    <strong>충분한 상담:</strong> 충분한 설명과 상담 시간을 제공
-                  </li>
-                  <li className="flex items-start text-sky-700">
-                    <span className="w-2 h-2 bg-sky-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                    <strong>고객 후기:</strong> 실제 고객 후기와 평점을 확인할
-                    수 있음
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 안전 거래 가이드 */}
-        <div className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-            📋 안전 거래 가이드
-          </h2>
-
-          <div className="bg-white rounded-2xl p-8 shadow-lg">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl text-blue-600 font-bold">1</span>
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">
-                  상담 및 문의
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  1:1 상담으로 문의하여 상세한 설명을 듣고 의문점을 해결하세요.
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl text-sky-600 font-bold">2</span>
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">
-                  본인 확인
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  휴대폰 인증을 통해 본인 확인 절차를 진행합니다.
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl text-purple-600 font-bold">3</span>
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">
-                  안전 거래
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  투명한 수수료와 안전한 절차로 거래를 진행합니다.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 개인정보 수집 및 이용 */}
-        <div className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-            🔐 개인정보 수집 및 이용
-          </h2>
-
-          <div className="bg-white rounded-2xl p-8 shadow-lg">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-4">
-                  📋 수집하는 개인정보
-                </h3>
-                <div className="space-y-3">
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 mb-2">
-                      필수 정보
-                    </h4>
-                    <ul className="space-y-2 text-gray-700">
-                      <li className="flex items-start">
-                        <span className="w-2 h-2 bg-gray-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                        현금화 서비스 제공 및 본인 확인
-                      </li>
-                      <li className="flex items-start">
-                        <span className="w-2 h-2 bg-gray-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                        거래 안전성 확보 및 부정거래 방지
-                      </li>
-                      <li className="flex items-start">
-                        <span className="w-2 h-2 bg-gray-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                        고객 상담 및 문의 처리
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-4">
-                  ⏱️ 보유 및 이용기간
-                </h3>
-                <div className="space-y-3">
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-800 mb-2">
-                      자동 삭제
-                    </h4>
-                    <ul className="space-y-2 text-gray-700">
-                      <li className="flex items-start">
-                        <span className="w-2 h-2 bg-gray-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                        거래 완료 후 30일 이내 모든 정보 삭제
-                      </li>
-                      <li className="flex items-start">
-                        <span className="w-2 h-2 bg-gray-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                        법정 보관 의무 기간 준수
-                      </li>
-                      <li className="flex items-start">
-                        <span className="w-2 h-2 bg-gray-600 rounded-full mr-3 mt-2 flex-shrink-0" />
-                        고객 요청 시 즉시 삭제 가능
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 문의 및 신고 */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 md:p-12 text-white text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            🦕 안전한 거래, 고릴라티켓과 함께하세요!
-          </h2>
-          <p className="text-lg md:text-xl mb-8 opacity-90">
-            추가 문의사항이나 의심스러운 업체 신고는
-            <br />
-            언제든지 고릴라티켓 고객센터로 연락해주세요.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); (window as any).startConsult(); }}
-              className="inline-block bg-yellow-400 text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors"
-            >
-              💬 안전 상담하기
-            </a>
-            <Link
-              to="/contact"
-              className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            >
-              📞 고객센터 문의
-            </Link>
-          </div>
+          ))}
         </div>
       </div>
-    </div>
-  );
-};
+    </section>
+
+    <section className="border-b border-line bg-frost">
+      <div className="wrap grid gap-12 py-20 md:py-28 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+        <div>
+          <SectionHead
+            eyebrow="Warning signs"
+            title={<>이런 신호가 있으면 멈추세요.</>}
+            lead="상담 중 아래와 같은 요청을 받았다면 진행하지 않고 알려주세요."
+          />
+          <div className="mt-8">
+            <ConsultButton label="채널톡으로 알리기" variant="outline" />
+          </div>
+        </div>
+        <dl className="divide-y divide-line border-y border-line">
+          {signs.map((s) => (
+            <div key={s.title} className="grid gap-2 py-6 sm:grid-cols-[170px_1fr] sm:gap-6">
+              <dt className="text-[1rem] font-semibold text-azure">{s.title}</dt>
+              <dd className="text-[13.5px] leading-[1.9] text-ink-soft">{s.body}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </section>
+
+    <section className="border-b border-line bg-white">
+      <div className="wrap py-20 md:py-28">
+        <SectionHead eyebrow="Guides" title={<>더 확인해 보세요</>} />
+        <div className="mt-12 grid gap-4 md:grid-cols-3">
+          {guides.map((g) => (
+            <Link
+              key={g.to}
+              to={g.to}
+              className="group rounded-xl border border-line bg-frost p-7 transition-colors hover:border-azure/50 hover:bg-white"
+            >
+              <h3 className="text-[1.05rem] font-semibold text-ink group-hover:text-azure">{g.label}</h3>
+              <p className="mt-2 text-[13px] leading-[1.85] text-ink-soft">{g.desc}</p>
+              <span aria-hidden="true" className="mt-6 inline-block text-azure transition-transform group-hover:translate-x-1">
+                →
+              </span>
+            </Link>
+          ))}
+        </div>
+        <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-[12.5px] text-ink-muted">
+          <span>문의 {site.phone}</span>
+          <span aria-hidden="true" className="h-3 w-px bg-line" />
+          <span>{site.hours}</span>
+          <span aria-hidden="true" className="h-3 w-px bg-line" />
+          <ArrowLink to="/privacy">개인정보처리방침</ArrowLink>
+        </div>
+      </div>
+    </section>
+
+    <CTABand
+      eyebrow="Safety first"
+      title={
+        <>
+          확인이 끝나기 전에는
+          <br className="hidden sm:block" /> 아무것도 보내지 않으셔도 됩니다.
+        </>
+      }
+      body="상품권 종류와 결제 방법만 알려주셔도 가능 여부를 확인해 안내드립니다."
+    />
+  </>
+);
 
 export default Safety;

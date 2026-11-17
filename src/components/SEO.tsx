@@ -1,103 +1,98 @@
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import type React from "react";
+import { Helmet } from "react-helmet-async";
+import { site } from "../data/site";
 
 interface FAQItem {
-question: string;
-answer: string;
+  question: string;
+  answer: string;
 }
 
 interface SEOProps {
-title: string;
-description: string;
-keywords?: string;
-faqItems?: FAQItem[];
-pageType?: 'home' | 'service' | 'blog' | 'general';
-noindex?: boolean;
+  title: string;
+  description: string;
+  keywords?: string;
+  faqItems?: FAQItem[];
+  noindex?: boolean;
 }
 
-const SEO: React.FC<SEOProps> = ({ title, description, keywords, faqItems, pageType = 'general', noindex = false }) => {
-const defaultKeywords = "소액결제현금화,소액결제 현금화,소액결제 현금화 방법,소액결제현금화 디시,소액결제 현금화 후기,소액결제 현금화 수수료,소액결제 현금화 업체,소액결제 현금화 추천,소액결제 현금화 사이트,소액결제 방법,소액결제 한도,소액결제 한도 확인,휴대폰 소액결제 현금화,핸드폰 소액결제 현금화,SKT 소액결제 현금화,KT 소액결제 현금화,LGU 소액결제 현금화,미납 소액결제 현금화,소액결제 즉시입금,소액결제 현금화 안전,고릴라티켓,정보이용료현금화,신용카드현금화,상품권현금화";
-const finalKeywords = keywords ? `${keywords}, ${defaultKeywords}` : defaultKeywords;
-const siteUrl = "https://xn--299a64rxvbk71bjne.com";
-const canonicalUrl = `${siteUrl}${window.location.pathname}`;
-const fullTitle = `${title} | 고릴라티켓`;
+/**
+ * 페이지별 메타 태그.
+ * 구조화 데이터에는 확인된 정보(이름·연락처·안내 범위)만 넣습니다.
+ * 반응 수·평점처럼 근거가 필요한 값은 넣지 않습니다.
+ */
+const SEO: React.FC<SEOProps> = ({ title, description, keywords, faqItems, noindex = false }) => {
+  const defaultKeywords =
+    "고릴라티켓,상품권 매입,휴대폰 소액결제 상품권,신용카드 상품권 구매,정보이용료 게임재화,채널톡 상담";
+  const finalKeywords = keywords ? `${keywords},${defaultKeywords}` : defaultKeywords;
+  const canonicalUrl = `${site.url}${typeof window !== "undefined" ? window.location.pathname : "/"}`;
+  const fullTitle = `${title} | ${site.name}`;
 
-const organizationSchema = {
-"@context": "https://schema.org",
-"@type": "LocalBusiness",
-"name": "고릴라티켓",
-"url": siteUrl,
-"logo": `${siteUrl}/gorilla-mascot.webp`,
-"image": `${siteUrl}/gorilla-mascot.webp`,
-"description": "소액결제현금화 상담 안내. SKT·KT·LGU+ 모든 통신사 소액결제 현금화, 빠른 입금 안내, 미납 정책 상담 가능, 24시간 상담 운영.",
-"telephone": "+82-10-2138-0790",
-"openingHours": "Mo-Su 00:00-24:00",
-"priceRange": "수수료 20~30%",
-"areaServed": "KR",
-"contactPoint": {
-"@type": "ContactPoint",
-"telephone": "+82-10-2138-0790",
-"contactType": "customer service",
-"availableLanguage": "Korean",
-"hoursAvailable": "Mo-Su 00:00-24:00"
-},
-"aggregateRating": {
-"@type": "AggregateRating",
-"ratingValue": "4.9",
-"reviewCount": "847",
-"bestRating": "5"
-}
-};
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: site.name,
+    alternateName: site.nameEn,
+    url: site.url,
+    logo: `${site.url}/gorilla-mascot.webp`,
+    image: `${site.url}/gorilla-mascot.webp`,
+    description:
+      "상품권 매입과 휴대폰 소액결제·신용카드 상품권 구매, 정보이용료 게임재화 구매 절차를 확인해 채널톡 1:1 상담으로 안내하는 사이트입니다.",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: site.phone,
+      contactType: "customer support",
+      availableLanguage: "ko",
+      hoursAvailable: "Mo-Su 00:00-24:00",
+    },
+  };
 
-const faqSchema = faqItems && faqItems.length > 0 ? {
-"@context": "https://schema.org",
-"@type": "FAQPage",
-"mainEntity": faqItems.map(item => ({
-"@type": "Question",
-"name": item.question,
-"acceptedAnswer": {
-"@type": "Answer",
-"text": item.answer
-}
-}))
-} : null;
+  const faqSchema =
+    faqItems && faqItems.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: { "@type": "Answer", text: item.answer },
+          })),
+        }
+      : null;
 
-return (
-<Helmet>
-<title>{fullTitle}</title>
-<meta name="description" content={description} />
-<meta name="keywords" content={finalKeywords} />
-<link rel="canonical" href={canonicalUrl} />
-<meta name="robots" content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
+  return (
+    <>
+      <Helmet>
+        <title>{fullTitle}</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={finalKeywords} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta
+          name="robots"
+          content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large, max-snippet:-1"}
+        />
 
-<meta property="og:type" content="website" />
-<meta property="og:locale" content="ko_KR" />
-<meta property="og:title" content={fullTitle} />
-<meta property="og:description" content={description} />
-<meta property="og:site_name" content="고릴라티켓" />
-<meta property="og:image" content={`${siteUrl}/gorilla-mascot.webp`} />
-<meta property="og:image:width" content="1000" />
-<meta property="og:image:height" content="1000" />
-<meta property="og:image:alt" content={fullTitle} />
-<meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="ko_KR" />
+        <meta property="og:title" content={fullTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:site_name" content={site.name} />
+        <meta property="og:image" content={`${site.url}/gorilla-mascot.webp`} />
+        <meta property="og:image:width" content="1000" />
+        <meta property="og:image:height" content="1000" />
+        <meta property="og:image:alt" content={`${site.name} 마스코트`} />
+        <meta property="og:url" content={canonicalUrl} />
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content={fullTitle} />
-<meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={`${siteUrl}/gorilla-mascot.webp`} />
-<meta name="twitter:image:alt" content={fullTitle} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={fullTitle} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={`${site.url}/gorilla-mascot.webp`} />
+        <meta name="twitter:image:alt" content={fullTitle} />
+      </Helmet>
 
-<script type="application/ld+json">
-{JSON.stringify(organizationSchema)}
-</script>
-
-{faqSchema && (
-<script type="application/ld+json">
-{JSON.stringify(faqSchema)}
-</script>
-)}
-</Helmet>
-);
+      <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
+      {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
+    </>
+  );
 };
 
 export default SEO;
