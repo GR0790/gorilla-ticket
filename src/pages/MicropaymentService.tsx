@@ -106,7 +106,7 @@ const MicropaymentService: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div>
                   <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                    <strong>소액결제 현금화</strong>란 SKT, KT, LGU+ 통신사에서 제공하는 <strong>휴대폰 소액결제 한도</strong>를 활용해 필요한 현금을 즉시 마련하는 서비스입니다. 복잡한 서류나 심사 없이 <strong>휴대폰 하나만으로 3분 안에 현금화</strong>가 가능합니다.
+                    <strong>소액결제 현금화</strong>란 SKT, KT, LGU+ 통신사에서 제공하는 <strong>휴대폰 소액결제 한도</strong>를 활용해 필요한 현금을 즉시 마련하는 서비스입니다. 복잡한 서류나 심사 없이 <strong>휴대폰 하나만으로 현금화</strong>가 가능합니다.
                   </p>
                   <p className="text-gray-700 leading-relaxed mb-4">
                     디시인사이드, 네이버 카페, 각종 커뮤니티에서 <strong>소액결제현금화 업체 추천</strong>으로 고릴라티켓이 꾸준히 언급되는 이유는 합리적인 수준의 <strong>지급률(70~80%)</strong>과 빠른 입금 속도 때문입니다.
@@ -138,7 +138,7 @@ const MicropaymentService: React.FC = () => {
                     <div className="flex items-start">
                       <div className="w-8 h-8 bg-sky-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">3</div>
                       <div>
-                        <p className="text-sky-800 font-medium">3분 이내 즉시 입금 완료</p>
+                        <p className="text-sky-800 font-medium">빠른 입금 안내</p>
                         <p className="text-sky-700 text-sm">지정 계좌로 즉시 현금 입금</p>
                       </div>
                     </div>
@@ -269,7 +269,7 @@ const MicropaymentService: React.FC = () => {
                 {
                   name: "김*수 (SKT, 30만원)",
                   tag: "소액결제 현금화 후기",
-                  review: "소액결제현금화 디시 보고 고릴라티켓 찾았는데 진짜 3분도 안됐어요. 수수료도 다른 데보다 저렴하고 상담도 친절해서 너무 좋았습니다. 강추!",
+                  review: "소액결제현금화 디시 보고 고릴라티켓 찾았는데 진짜 빨랐어요. 수수료도 다른 데보다 저렴하고 상담도 친절해서 너무 좋았습니다. 강추!",
                   stars: 5
                 },
                 {
@@ -281,7 +281,7 @@ const MicropaymentService: React.FC = () => {
                 {
                   name: "박*호 (LGU+, 20만원)",
                   tag: "소액결제 현금화 방법 안내",
-                  review: "소액결제 현금화 방법을 몰라서 걱정했는데 상담사 분이 처음부터 끝까지 친절하게 안내해줬어요. 즉시입금 진짜 맞더라고요. 다음에 또 이용할게요.",
+                  review: "소액결제 현금화 방법을 몰라서 걱정했는데 상담사 분이 처음부터 끝까지 친절하게 안내해줬어요. 입금 진짜 맞더라고요. 다음에 또 이용할게요.",
                   stars: 5
                 },
               ].map((review) => (
@@ -409,7 +409,7 @@ const MicropaymentService: React.FC = () => {
                 지금 바로 소액결제 현금화 상담받아보세요!
               </h2>
               <p className="text-lg mb-6 opacity-90">
-                급한 비상금이 필요할 때, 고릴라티켓 소액결제 현금화로 3분 안에 해결하세요.<br />
+                급한 비상금이 필요할 때, 고릴라티켓 소액결제 현금화로 빠르게 해결하세요.<br />
                 24시간 365일 상담 가능, 미납·정책도 상담 가능.
               </p>
               <a

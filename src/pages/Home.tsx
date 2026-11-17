@@ -482,7 +482,7 @@ const ReviewsSection: React.FC = () => (
             </div>
           </div>
           <p className="text-gray-700 text-sm md:text-base">
-            "정말 급했는데 3분도 안되서 입금됐어요! 상담도 친절하시고
+            "정말 급했는데 빠르게 입금됐어요! 상담도 친절하시고
             소액결제현금화 정말 만족스러웠습니다. 고릴라티켓 덕분에 잘 해결했어요."
           </p>
         </div>
