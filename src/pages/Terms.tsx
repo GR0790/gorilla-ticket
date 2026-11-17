@@ -108,7 +108,7 @@ const Terms: React.FC = () => (
   <>
     <SEO
       title="이용약관"
-      description="고릴라티켓 이용약관. 상담 서비스의 성격과 이용 조건, 이용자의 의무, 서비스 제한, 책임의 범위를 안내합니다."
+      description="고릴라티켓 상담 서비스의 성격과 이용 조건, 이용자가 지켜야 할 의무, 서비스 제한과 책임의 범위를 정리한 약관입니다."
     />
     <PageHero
       eyebrow="Terms of service"

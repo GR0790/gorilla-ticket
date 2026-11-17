@@ -105,7 +105,7 @@ const Privacy: React.FC = () => (
   <>
     <SEO
       title="개인정보처리방침"
-      description="고릴라티켓 개인정보처리방침. 상담 과정에서 확인하는 정보의 항목과 처리 목적, 보유 기간, 쿠키와 광고 도구, 이용자의 권리를 안내합니다."
+      description="고릴라티켓이 상담에서 확인하는 정보의 항목, 보관 기간과 파기 방법, 쿠키와 광고 도구의 사용, 이용자가 요청할 수 있는 권리를 정리했습니다."
     />
     <PageHero
       eyebrow="Privacy policy"

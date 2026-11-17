@@ -431,11 +431,11 @@ const FlowSection: React.FC = () => (
           eyebrow="How it works"
           title={
             <>
-              상담은 네 단계로
-              <br className="hidden md:block" /> 진행됩니다.
+              확인은 네 단계,
+              <br className="hidden md:block" /> 순서를 건너뛰지 않습니다.
             </>
           }
-          lead="접수에서 끝나지 않고, 조건 안내와 진행 확인까지 이어집니다."
+          lead="각 단계는 앞 단계의 확인이 끝난 뒤에 이어집니다. 급하게 넘어가면 나중에 다시 확인해야 합니다."
         />
         <div className="hidden shrink-0 md:block">
           <ArrowLink to="/how-to-use">단계별로 보기</ArrowLink>
@@ -502,7 +502,7 @@ const ScenesSection: React.FC = () => (
             <br /> 상담을 시작합니다.
           </>
         }
-        lead="정해진 상품만 안내하는 곳이 아니라, 상황에 맞는 방법을 함께 찾습니다."
+        lead="방법이 정해져 있지 않아도 괜찮습니다. 지금 가진 것과 상황을 알려주시면 확인할 항목부터 골라 드립니다."
       />
       <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
         {scenes.map((s) => (
@@ -562,9 +562,10 @@ const FAQTeaserSection: React.FC = () => (
 const Home: React.FC = () => (
   <>
     <SEO
-      title="상품권 매입·휴대폰 소액결제 상품권 구매 안내"
-      description="상품권 매입과 휴대폰 소액결제·신용카드 상품권 구매, 정보이용료 게임재화 구매. 확인할 항목과 조건을 채널톡 1:1 상담으로 안내합니다."
-      keywords="상품권 매입,휴대폰 소액결제 상품권,신용카드 상품권 구매,정보이용료 게임재화,모바일 상품권"
+      title="상품권 매입 전 확인 순서 · 결제 한도 점검"
+      description="남은 상품권은 발행사·잔액·유효기간부터, 결제로 살 때는 통신사 한도와 할부 총액부터 확인합니다. 무엇을 어떤 순서로 보면 되는지 정리해 두었고, 확인이 끝나면 채널톡 1:1 상담에서 조건을 안내합니다."
+      ogDescription="확인할 항목을 순서대로 정리했습니다. 발행사·잔액·유효기간, 통신사 한도, 할부 총액. 다 확인한 뒤에 진행합니다."
+      keywords="상품권 매입 전 확인,상품권 잔액 확인,휴대폰 결제 한도,카드 할부 총액,상품권 유효기간"
       faqItems={homeFaq.map((f) => ({ question: f.q, answer: f.a }))}
     />
     <HeroSection />
@@ -583,7 +584,7 @@ const Home: React.FC = () => (
           <br className="hidden sm:block" /> 진행 여부는 천천히 결정하세요.
         </>
       }
-      body="상품권 종류나 결제 방법만 알려주시면 가능한 범위와 조건을 정리해 안내드립니다."
+      body="발행사와 잔액, 결제 수단만 알려주시면 확인할 항목을 정리해 드립니다. 결정은 안내를 다 들으신 뒤에 하셔도 됩니다."
     />
   </>
 );

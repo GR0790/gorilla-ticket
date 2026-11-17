@@ -10,6 +10,7 @@ interface FAQItem {
 interface SEOProps {
   title: string;
   description: string;
+  ogDescription?: string;
   keywords?: string;
   faqItems?: FAQItem[];
   noindex?: boolean;
@@ -20,9 +21,9 @@ interface SEOProps {
  * 구조화 데이터에는 확인된 정보(이름·연락처·안내 범위)만 넣습니다.
  * 반응 수·평점처럼 근거가 필요한 값은 넣지 않습니다.
  */
-const SEO: React.FC<SEOProps> = ({ title, description, keywords, faqItems, noindex = false }) => {
+const SEO: React.FC<SEOProps> = ({ title, description, ogDescription, keywords, faqItems, noindex = false }) => {
   const defaultKeywords =
-    "고릴라티켓,상품권 매입,휴대폰 소액결제 상품권,신용카드 상품권 구매,정보이용료 게임재화,채널톡 상담";
+    "고릴라티켓,상품권 매입,상품권 잔액 확인,휴대폰 결제 한도,채널톡 상담";
   const finalKeywords = keywords ? `${keywords},${defaultKeywords}` : defaultKeywords;
   const canonicalUrl = `${site.url}${typeof window !== "undefined" ? window.location.pathname : "/"}`;
   const fullTitle = `${title} | ${site.name}`;
@@ -36,7 +37,7 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, faqItems, noind
     logo: `${site.url}/gorilla-mascot.webp`,
     image: `${site.url}/gorilla-mascot.webp`,
     description:
-      "상품권 매입과 휴대폰 소액결제·신용카드 상품권 구매, 정보이용료 게임재화 구매 절차를 확인해 채널톡 1:1 상담으로 안내하는 사이트입니다.",
+      "상품권 매입과 휴대폰·카드 결제, 게임 재화 구매에서 먼저 확인할 항목과 순서를 정리해 안내하는 사이트입니다.",
     contactPoint: {
       "@type": "ContactPoint",
       telephone: site.phone,
@@ -74,7 +75,7 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, faqItems, noind
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="ko_KR" />
         <meta property="og:title" content={fullTitle} />
-        <meta property="og:description" content={description} />
+        <meta property="og:description" content={ogDescription ?? description} />
         <meta property="og:site_name" content={site.name} />
         <meta property="og:image" content={`${site.url}/gorilla-mascot.webp`} />
         <meta property="og:image:width" content="1000" />
@@ -84,7 +85,7 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, faqItems, noind
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={fullTitle} />
-        <meta name="twitter:description" content={description} />
+        <meta name="twitter:description" content={ogDescription ?? description} />
         <meta name="twitter:image" content={`${site.url}/gorilla-mascot.webp`} />
         <meta name="twitter:image:alt" content={fullTitle} />
       </Helmet>
