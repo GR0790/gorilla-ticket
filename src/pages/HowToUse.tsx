@@ -52,7 +52,7 @@ const precheck = [
 const mistakes = [
   {
     title: "유효기간을 나중에 확인하는 경우",
-    body: "상품권은 사용 기간이 지나면 처리 방식이 달라집니다. 상담 전에 유효기간과 사용 이력을 확인해 두면 진행이 빠릅니다.",
+    body: "유효기간이 지나면 처리 방식이 달라지는 상품권이 많습니다. 미리 기간과 사용 이력을 확인해 두시면 상담이 짧아집니다.",
   },
   {
     title: "한도와 조건을 모르고 결제하는 경우",
@@ -80,7 +80,7 @@ const HowToUse: React.FC = () => (
           <br />이 순서만 보세요.
         </>
       }
-      lead="상담 연결에서 끝나지 않고 조건 안내와 진행 확인까지 이어집니다. 각 단계에서 확인해야 할 내용을 정리했습니다."
+      lead="상담으로 끝나지 않고, 조건을 안내하고 진행을 확인하는 데까지 이어집니다. 단계마다 무엇을 확인하는지 적어두었습니다."
     />
 
     <section className="border-b border-line bg-white">
@@ -187,7 +187,7 @@ const HowToUse: React.FC = () => (
           <br className="hidden sm:block" /> 모르겠다면 그대로 알려주세요.
         </>
       }
-      body="상황을 그대로 적어주시면, 무엇을 먼저 확인해야 하는지부터 안내드립니다."
+      body="지금 상황을 그대로 적어주시면, 어디부터 확인해야 하는지 알려드립니다."
     />
     <div className="bg-white py-10">
       <div className="wrap">

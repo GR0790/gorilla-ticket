@@ -37,7 +37,7 @@ const Contact: React.FC = () => (
     <SEO
       title="상담 — 채널톡 1:1 문의"
       description="고릴라티켓 상담 안내. 상담 버튼을 누르면 성함과 연락처를 한 번 확인한 뒤 채널톡 1:1 상담으로 연결됩니다. 전화 상담도 가능합니다."
-      keywords="고릴라티켓 상담,채널톡 상담,상품권 문의,1:1 상담"
+      keywords="고릴라티켓 상담,채널톡 문의,상품권 상담,1:1 상담 연결"
     />
     <PageHero
       eyebrow="Contact"
@@ -156,7 +156,7 @@ const Contact: React.FC = () => (
           <br className="hidden sm:block" /> 먼저 물어보세요.
         </>
       }
-      body="상담만으로도 충분합니다. 진행 여부는 조건을 확인한 뒤 결정하셔도 됩니다."
+      body="상담만 받고 끝내셔도 됩니다. 조건을 보고 진행 여부를 정하세요."
     />
   </>
 );

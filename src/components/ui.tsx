@@ -180,7 +180,7 @@ export const CTABand: React.FC<{
       <br className="hidden sm:block" /> 바로 상담창으로 연결됩니다.
     </>
   ),
-  body = "확인할 내용을 정리해 남겨주시면 담당자가 조건과 가능 여부를 확인해 안내드립니다. 상담은 무료입니다.",
+  body = "확인할 내용을 남겨주시면 담당자가 가능 여부와 조건을 짚어 안내합니다. 상담은 무료입니다.",
 }) => (
   <section className="relative overflow-hidden bg-night">
     <div aria-hidden="true" className="grid-bg-dark pointer-events-none absolute inset-0 opacity-70" />
