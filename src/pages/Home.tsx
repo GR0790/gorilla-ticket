@@ -230,11 +230,11 @@ const HeroSection: React.FC = () => (
           </p>
         </div>
 
-        <h1 className="display-hero mt-7 text-ink">
+        <h1 className="display-hero mt-7 break-keep text-ink">
           상품권 구매와 매입,
           <br />
           <span className="bg-gradient-to-r from-azure to-sky-deep bg-clip-text text-transparent">
-            확인한 뒤에 진행합니다.
+            쉽고 빠르게 진행합니다.
           </span>
         </h1>
 
