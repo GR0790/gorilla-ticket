@@ -336,7 +336,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 24시간 1:1 상담
                 <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-sky-light" />
               </span>
-              <span className="mt-1 block text-[11px] font-medium text-white/75">바로 연결 · 상담 무료</span>
+              <span className="mt-1 block text-[11px] font-medium text-white/75">채널톡 1:1 · 상담 무료</span>
             </span>
           </span>
           <span aria-hidden="true" className="relative text-[18px] leading-none text-white/80 transition-transform duration-300 group-hover:translate-x-0.5">
