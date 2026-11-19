@@ -231,16 +231,16 @@ const HeroSection: React.FC = () => (
         </div>
 
         <h1 className="display-hero mt-7 break-keep text-ink">
-          상품권 구매와 매입,
+          남는 휴대폰 한도 · 소액결제,
           <br />
           <span className="bg-gradient-to-r from-azure to-sky-deep bg-clip-text text-transparent">
-            쉽고 빠르게 진행합니다.
+            1:1 상담으로 바로 안내합니다.
           </span>
         </h1>
 
         <p className="lead mt-7 max-w-xl">
-          휴대폰 소액결제나 신용카드로 상품권을 살 때, 남아 있는 상품권을 정리할 때, 정보이용료로
-          게임 재화를 살 때. 방법마다 확인할 항목이 달라서 고릴라티켓은 조건을 먼저 정리합니다.
+          휴대폰 소액결제·정보이용료·상품권 매입까지, 본인 명의 한도 안에서 가능한 조건을
+          빠르고 깔끔하게 확인해 드립니다.
         </p>
 
         <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
